@@ -1,0 +1,23 @@
+@page
+@model ResetAuthenticatorModel
+@{
+    ViewData["Title"] = "Zresetuj klucz uwierzytelniający";
+    ViewData["ActivePage"] = "TwoFactorAuthentication";
+}
+
+<h4>@ViewData["Title"]</h4>
+<div class="alert alert-warning" role="alert">
+    <p>
+        <span class="glyphicon glyphicon-warning-sign"></span>
+        <strong>Jeśli zresetujesz klucz uwierzytelniający, aplikacja uwierzytelniająca nie będzie działać, dopóki jej nie skonfigurujesz.</strong>
+    </p>
+    <p>
+        Ten proces wyłącza 2FA, dopóki nie zweryfikujesz aplikacji uwierzytelniającej, a także zresetuje kody odzyskiwania 2FA.
+        Jeśli nie ukończysz konfiguracji aplikacji uwierzytelniającej, możesz utracić dostęp do swojego konta.
+    </p>
+</div>
+<div>
+    <form method="post" class="form-group">
+        <button class="btn btn-danger" type="submit">Zresetuj klucz uwierzytelniający</button>
+    </form>
+</div>

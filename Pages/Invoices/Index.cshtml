@@ -1,0 +1,81 @@
+@page
+@model InvoiceManager.Pages.Invoices.IndexModel
+
+@{
+    ViewData["Title"] = "Lista faktur";
+}
+
+<h2>Lista faktur</h2>
+
+<p>
+    <a asp-page="Create">Dodaj fakturę</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Invoice[0].CompanyName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Invoice[0].IssueDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Invoice[0].Amount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Invoice[0].DueDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Invoice[0].Status)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Invoice)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CompanyName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IssueDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Amount)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DueDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Status)
+                </td>
+
+                <td>
+                    @if ((await AuthorizationService.AuthorizeAsync(
+                  User, item,
+                  InvoiceOperations.Update)).Succeeded)
+                    {
+                        <a asp-page="./Edit" asp-route-id="@item.InvoiceId">Edytuj</a>
+                        <text> | </text>
+                    }
+
+                    <a asp-page="./Details" asp-route-id="@item.InvoiceId">Szczegóły</a>
+
+                    @if ((await AuthorizationService.AuthorizeAsync(
+                  User, item,
+                  InvoiceOperations.Delete)).Succeeded)
+                    {
+                        <text> | </text>
+                        <a asp-page="./Delete" asp-route-id="@item.InvoiceId">Usuń</a>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@if (User.IsInRole(Constants.InvoiceAdministratorsRole))
+{
+    <text>Posiadasz uprawienia do oznaczania faktur, jako 'Wystawione' w szczegółach faktur.</text>
+}

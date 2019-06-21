@@ -1,0 +1,67 @@
+@page "{id:int}"
+@model InvoiceManager.Pages.Invoices.DetailsModel
+
+@{
+    ViewData["Title"] = "Szczegóły faktury";
+}
+
+<h2>Szczegóły faktury</h2>
+
+<div>
+    <h4>Faktura</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Invoice.CompanyName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Invoice.CompanyName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Invoice.IssueDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Invoice.IssueDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Invoice.Amount)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Invoice.Amount)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Invoice.DueDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Invoice.DueDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Invoice.Status)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Invoice.Status)
+        </dd>
+    </dl>
+</div>
+
+@if (Model.Invoice.Status != InvoiceStatus.Approved)
+{
+    if ((await AuthorizationService.AuthorizeAsync(User, Model.Invoice, InvoiceOperations.Approve)).Succeeded)
+    {
+        <form style="display:inline;" method="post">
+            <input type="hidden" name="id" value="@Model.Invoice.InvoiceId" />
+            <input type="hidden" name="status" value="@InvoiceStatus.Approved" />
+            <button type="submit" class="btn btn-xs btn-success">Oznacz, jako "wystawione"</button>
+        </form>
+    }
+}
+
+<div>
+    @if ((await AuthorizationService.AuthorizeAsync(User, Model.Invoice, InvoiceOperations.Update)).Succeeded)
+    {
+        <a asp-page="./Edit" asp-route-id="@Model.Invoice.InvoiceId">Edytuj</a>
+        <text> | </text>
+    }
+    <a asp-page="./Index">Wróć do listy</a>
+</div>

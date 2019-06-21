@@ -1,0 +1,49 @@
+@page
+@model TwoFactorAuthenticationModel
+@{
+    ViewData["Title"] = "Uwierzytelnianie dwuskładnikowe (2FA)";
+}
+
+<h4>@ViewData["Title"]</h4>
+@if (Model.Is2FaEnabled)
+{
+    if (Model.RecoveryCodesLeft == 0)
+    {
+        <div class="alert alert-danger">
+            <strong>Nie masz już kodów odzyskiwania.</strong>
+            <p>Musisz <a asp-page="./GenerateRecoveryCodes"> wygenerować nowy zestaw kodów odzyskiwania</a>, zanim będziesz mógł zalogować się za pomocą kodu odzyskiwania.</p>
+        </div>
+    }
+    else if (Model.RecoveryCodesLeft == 1)
+    {
+        <div class="alert alert-danger">
+            <strong>Pozostał 1 kod odzyskiwania.</strong>
+            <p>Mo¿esz <a asp-page="./GenerateRecoveryCodes">wygenerować nowy zestaw kodów odzyskiwania</a>.</p>
+        </div>
+    }
+    else if (Model.RecoveryCodesLeft <= 3)
+    {
+        <div class="alert alert-warning">
+            <strong>Pozostało @Model.RecoveryCodesLeft kodów odzyskiwania.</strong>
+            <p>Powinieneś <a asp-page="./GenerateRecoveryCodes">wygenerować nowy zestaw kodów odzyskiwania</a>.</p>
+        </div>
+}
+
+<a asp-page="./Disable2fa" class="btn btn-default">Wyłącz 2FA</a>
+<a asp-page="./GenerateRecoveryCodes" class="btn btn-default">Zresetuj kody odzyskiwania</a>
+}
+
+<h5>Aplikacja uwierzytelniająca</h5>
+@if (!Model.HasAuthenticator)
+{
+<a asp-page="./EnableAuthenticator" class="btn btn-default">Dodaj aplikację uwierzytelniającą</a>
+}
+else
+{
+<a asp-page="./EnableAuthenticator" class="btn btn-default">Konfiguruj aplikację uwierzytelniającą</a>
+<a asp-page="./ResetAuthenticator" class="btn btn-default">Zresetuj aplikację uwierzytelniającą</a>
+}
+
+@section Scripts {
+    @await Html.PartialAsync($"_ValidationScriptsPartial")
+}

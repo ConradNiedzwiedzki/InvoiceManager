@@ -1,0 +1,14 @@
+.vs/InvoiceManager/v16/Server/sqlite3/storage.ide
+.vs/InvoiceManager/v16/Server/sqlite3/db.lock
+.vs/InvoiceManager/v16/.suo
+.vs/InvoiceManager/v15/.suo
+.vs/InvoiceManager/config/applicationhost.config
+.vs/InvoiceManager/DesignTimeBuild/.dtbcache
+InvoiceManager.v3.ncrunchsolution.user
+InvoiceManager.sln.DotSettings.user
+InvoiceManager.sln.DotSettings
+InvoiceManager.csproj.user
+InvoiceManager.DotSettings.user
+bin/
+Migrations/
+obj/

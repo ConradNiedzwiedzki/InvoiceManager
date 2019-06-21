@@ -1,0 +1,52 @@
+@page "{id:int}"
+@model InvoiceManager.Pages.Invoices.DeleteModel
+
+@{
+    ViewData["Title"] = "Usuń";
+}
+
+<h2>Usuwanie</h2>
+
+<h3>Jesteś pewien, że chcesz usunąć tę fakturę?</h3>
+<div>
+    <h4>Faktura</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Invoice.CompanyName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Invoice.CompanyName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Invoice.IssueDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Invoice.IssueDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Invoice.Amount)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Invoice.Amount)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Invoice.DueDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Invoice.DueDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Invoice.Status)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Invoice.Status)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Invoice.InvoiceId" />
+        <input type="submit" value="Usuń" class="btn btn-default" /> |
+        <a asp-page="./Index">Wróć do listy</a>
+    </form>
+</div>
