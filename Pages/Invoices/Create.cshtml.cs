@@ -13,9 +13,12 @@ namespace InvoiceManager.Pages.Invoices
 {
     public class CreateModel : DiBasePageModel
     {
+        private readonly UserManager<ApplicationUser> _userManager;
+
         public CreateModel(ApplicationDbContext context, IAuthorizationService authorizationService, UserManager<ApplicationUser> userManager)
             : base(context, authorizationService, userManager)
         {
+            _userManager = userManager;
         }
 
         public IActionResult OnGet()
@@ -23,9 +26,9 @@ namespace InvoiceManager.Pages.Invoices
             Invoice = new Invoice
             {
                 CompanyName = "Nazwa firmy",
-                IssueDate = DateTime.Today,
+                IssueDate = DateTime.Now,
                 Amount = 1000.00,
-                DueDate = DateTime.Today.AddDays(1)
+                DueDate = DateTime.Now.AddDays(1)
             };
             return Page();
         }
@@ -40,7 +43,15 @@ namespace InvoiceManager.Pages.Invoices
                 return Page();
             }
 
+            var user = await _userManager.GetUserAsync(User);
+            if (user == null)
+            {
+                throw new ApplicationException($"Unable to load user with ID '{_userManager.GetUserId(User)}'.");
+            }
+
             Invoice.OwnerId = UserManager.GetUserId(User);
+            Invoice.AccountantId = user.AccountantId;
+
             var isAuthorized = await AuthorizationService.AuthorizeAsync(User, Invoice, InvoiceOperations.Create);
 
             if (!isAuthorized.Succeeded)
