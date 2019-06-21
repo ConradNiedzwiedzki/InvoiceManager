@@ -29,7 +29,7 @@ namespace InvoiceManager.Pages.Invoices
                 return NotFound();
             }
 
-            var isAuthorized = User.IsInRole(Constants.InvoiceManagersRole) || User.IsInRole(Constants.InvoiceAdministratorsRole);
+            var isAuthorized = User.IsInRole(Constants.InvoiceAccountantRole) || User.IsInRole(Constants.InvoiceAdministratorsRole);
 
             var currentUserId = UserManager.GetUserId(User);
 

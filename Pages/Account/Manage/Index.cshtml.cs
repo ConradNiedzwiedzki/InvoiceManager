@@ -1,5 +1,6 @@
 using System;
 using System.ComponentModel.DataAnnotations;
+using System.Threading;
 using System.Threading.Tasks;
 
 using Microsoft.AspNetCore.Identity;
@@ -39,9 +40,11 @@ namespace InvoiceManager.Pages.Account.Manage
             [EmailAddress]
             public string Email { get; set; }
 
-            [Phone]
-            [Display(Name = "Numer telefonu")]
-            public string PhoneNumber { get; set; }
+            [Display(Name = "Numer ksiêgowego")]
+            public string AccountantId { get; set; }
+
+            [Display(Name = "Nazwa Twojej firmy")]
+            public string UserCompanyName { get; set; }
         }
 
         public async Task<IActionResult> OnGetAsync()
@@ -57,7 +60,8 @@ namespace InvoiceManager.Pages.Account.Manage
             Input = new InputModel
             {
                 Email = user.Email,
-                PhoneNumber = user.PhoneNumber
+                AccountantId = user.AccountantId,
+                UserCompanyName = user.UserCompanyName
             };
 
             IsEmailConfirmed = await _userManager.IsEmailConfirmedAsync(user);
@@ -87,10 +91,19 @@ namespace InvoiceManager.Pages.Account.Manage
                 }
             }
 
-            if (Input.PhoneNumber != user.PhoneNumber)
+            if (Input.AccountantId != user.AccountantId)
             {
-                var setPhoneResult = await _userManager.SetPhoneNumberAsync(user, Input.PhoneNumber);
-                if (!setPhoneResult.Succeeded)
+                var setAccountIdResult = SetAccountantIdAsync(user, Input.AccountantId);
+                if (!setAccountIdResult.IsCompletedSuccessfully)
+                {
+                    throw new ApplicationException($"Unexpected error occurred setting phone number for user with ID '{user.Id}'.");
+                }
+            }
+
+            if (Input.UserCompanyName != user.UserCompanyName)
+            {
+                var setUserCompanyNameResult = SetUserCompanyNameAsync(user, Input.UserCompanyName);
+                if (!setUserCompanyNameResult.IsCompletedSuccessfully)
                 {
                     throw new ApplicationException($"Unexpected error occurred setting phone number for user with ID '{user.Id}'.");
                 }
@@ -118,6 +131,24 @@ namespace InvoiceManager.Pages.Account.Manage
 
             StatusMessage = "Email weryfikacyjny zosta³ wys³any. SprawdŸ swoj¹ skrzynkê.";
             return RedirectToPage();
+        }
+
+        public virtual Task SetAccountantIdAsync(ApplicationUser user, string accountantId, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            cancellationToken.ThrowIfCancellationRequested();
+            if ((object)user == null)
+                throw new ArgumentNullException(nameof(user));
+            user.AccountantId = accountantId;
+            return Task.CompletedTask;
+        }
+
+        public virtual Task SetUserCompanyNameAsync(ApplicationUser user, string userCompanyName, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            cancellationToken.ThrowIfCancellationRequested();
+            if ((object)user == null)
+                throw new ArgumentNullException(nameof(user));
+            user.UserCompanyName = userCompanyName;
+            return Task.CompletedTask;
         }
     }
 }

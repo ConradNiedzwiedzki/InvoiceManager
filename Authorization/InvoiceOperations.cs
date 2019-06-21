@@ -22,6 +22,6 @@ namespace InvoiceManager.Authorization
         public static readonly string RejectOperationName =  "Reject";
 
         public static readonly string InvoiceAdministratorsRole = "InvoiceAdministrators";
-        public static readonly string InvoiceManagersRole = "InvoiceManagers";
+        public static readonly string InvoiceAccountantRole = "InvoiceAccountants";
     }
 }

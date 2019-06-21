@@ -7,7 +7,7 @@ using InvoiceManager.Models;
 
 namespace InvoiceManager.Authorization
 {
-    public class InvoiceManagerAuthorizationHandler : AuthorizationHandler<OperationAuthorizationRequirement, Invoice>
+    public class InvoiceAccountantAuthorizationHandler : AuthorizationHandler<OperationAuthorizationRequirement, Invoice>
     {
         protected override Task HandleRequirementAsync(AuthorizationHandlerContext context, OperationAuthorizationRequirement requirement, Invoice resource)
         {

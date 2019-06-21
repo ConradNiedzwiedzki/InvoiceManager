@@ -26,13 +26,13 @@ namespace InvoiceManager.Pages.Invoices
             var invoices = from i in Context.Invoice
                             select i;
 
-            var isAuthorized = User.IsInRole(Constants.InvoiceManagersRole) || User.IsInRole(Constants.InvoiceAdministratorsRole);
+            var isAuthorized = User.IsInRole(Constants.InvoiceAdministratorsRole);
 
             var currentUserId = UserManager.GetUserId(User);
 
             if (!isAuthorized)
             {
-                invoices = invoices.Where(i => i.Status == InvoiceStatus.Approved || i.OwnerId == currentUserId);
+                invoices = invoices.Where(i => i.AccountantId == currentUserId || i.OwnerId == currentUserId);
             }
 
             Invoice = await invoices.ToListAsync();

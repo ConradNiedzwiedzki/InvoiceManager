@@ -9,6 +9,9 @@ namespace InvoiceManager.Models
 
         public string OwnerId { get; set; }
 
+        [Display(Name = "ID księgowego")]
+        public string AccountantId { get; set; }
+
         [Display(Name = "Nazwa firmy")]
         public string CompanyName { get; set; }
 

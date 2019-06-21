@@ -21,7 +21,7 @@ namespace InvoiceManager.Data
                 await EnsureRole(serviceProvider, adminId, Constants.InvoiceAdministratorsRole);
 
                 var managerId = await EnsureUser(serviceProvider, testUserPw, "manager@niedzwiedzki.net");
-                await EnsureRole(serviceProvider, managerId, Constants.InvoiceManagersRole);
+                await EnsureRole(serviceProvider, managerId, Constants.InvoiceAccountantRole);
 
                 SeedDb(context, adminId);
             }
