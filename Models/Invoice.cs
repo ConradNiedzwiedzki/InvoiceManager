@@ -17,18 +17,21 @@ namespace InvoiceManager.Models
         public string CompanyName { get; set; }
 
         [Required(ErrorMessage = "Wpisz datę wystawienia faktury")]
-        [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        [DataType(DataType.Date)]
         [Display(Name = "Data wystawienia")]
         public DateTime IssueDate { get; set; }
 
         [Required(ErrorMessage = "Wpisz kwotę (np. 12.34)")]
+        [Range(0, double.MaxValue, ErrorMessage = "Wartość pola musi mieć format np. 12.34 (nie 12,34)")]
+        [RegularExpression("\\d{9}", ErrorMessage = "Wartość pola musi mieć format np. 12.34 (nie 12,34)")]
+        [DataType(DataType.Currency)]
         [Display(Name = "Kwota")]
         public double Amount { get; set; }
 
         [Required(ErrorMessage = "Wpisz datę opłacenia faktury")]
-        [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        [DataType(DataType.Date)]
         [Display(Name = "Termin opłacenia")]
         public DateTime DueDate { get; set; }
 
