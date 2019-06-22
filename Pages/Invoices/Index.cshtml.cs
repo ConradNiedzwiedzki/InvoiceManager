@@ -43,9 +43,9 @@ namespace InvoiceManager.Pages.Invoices
                         "<Nie dodałeś jeszcze ID księgowego do swojego profilu Dodaj ID księgowego, aby on również zobaczył fakturę!";
                 }
 
-                if (string.IsNullOrEmpty(invoice.AccountantId))
+                if (string.IsNullOrEmpty(invoice.CompanyName))
                 {
-                    invoice.AccountantId =
+                    invoice.CompanyName =
                         "<Nie dodałeś jeszcze nazwy swojej firmy do swojego profilu!>";
                 }
             }

@@ -93,23 +93,23 @@ namespace InvoiceManager.Pages.Account.Manage
 
             if (Input.AccountantId != user.AccountantId)
             {
-                var setAccountIdResult = SetAccountantIdAsync(user, Input.AccountantId);
-                if (!setAccountIdResult.IsCompletedSuccessfully)
-                {
-                    throw new ApplicationException($"Unexpected error occurred setting phone number for user with ID '{user.Id}'.");
-                }
+                user.AccountantId = Input.AccountantId;
             }
 
             if (Input.UserCompanyName != user.UserCompanyName)
             {
-                var setUserCompanyNameResult = SetUserCompanyNameAsync(user, Input.UserCompanyName);
-                if (!setUserCompanyNameResult.IsCompletedSuccessfully)
-                {
-                    throw new ApplicationException($"Unexpected error occurred setting phone number for user with ID '{user.Id}'.");
-                }
+                user.UserCompanyName = Input.UserCompanyName;
+            }
+
+            var result = await _userManager.UpdateAsync(user);
+
+            foreach (var error in result.Errors)
+            {
+                ModelState.AddModelError(string.Empty, error.Description);
             }
 
             StatusMessage = "Twój profil zosta³ zaktualizowany";
+
             return RedirectToPage();
         }
         public async Task<IActionResult> OnPostSendVerificationEmailAsync()
