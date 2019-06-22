@@ -25,10 +25,8 @@ namespace InvoiceManager.Pages.Invoices
         {
             Invoice = new Invoice
             {
-                CompanyName = "Nazwa firmy",
-                IssueDate = DateTime.Now,
-                Amount = 1000.00,
-                DueDate = DateTime.Now.AddDays(1)
+                IssueDate = DateTime.Today,
+                DueDate = DateTime.Today
             };
             return Page();
         }

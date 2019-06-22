@@ -12,17 +12,23 @@ namespace InvoiceManager.Models
         [Display(Name = "ID księgowego")]
         public string AccountantId { get; set; }
 
+        [Required(ErrorMessage = "Wpisz nazwę firmy")]
         [Display(Name = "Nazwa firmy")]
         public string CompanyName { get; set; }
 
-        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
+        [Required(ErrorMessage = "Wpisz datę wystawienia faktury")]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}")]
         [Display(Name = "Data wystawienia")]
         public DateTime IssueDate { get; set; }
 
+        [Required(ErrorMessage = "Wpisz kwotę (np. 12.34)")]
         [Display(Name = "Kwota")]
         public double Amount { get; set; }
 
-        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
+        [Required(ErrorMessage = "Wpisz datę opłacenia faktury")]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}")]
         [Display(Name = "Termin opłacenia")]
         public DateTime DueDate { get; set; }
 
