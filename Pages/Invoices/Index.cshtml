@@ -13,6 +13,12 @@
 <table class="table">
     <thead>
         <tr>
+            @if (User.IsInRole(Constants.InvoiceAccountantRole) || User.IsInRole(Constants.InvoiceAdministratorsRole))
+            {
+                <th>
+                    @Html.DisplayNameFor(model => model.Invoice[0].UserCompanyName)
+                </th>
+            }
             <th>
                 @Html.DisplayNameFor(model => model.Invoice[0].CompanyName)
             </th>
@@ -35,6 +41,12 @@
         @foreach (var item in Model.Invoice)
         {
             <tr>
+                @if (User.IsInRole(Constants.InvoiceAccountantRole) || User.IsInRole(Constants.InvoiceAdministratorsRole))
+                {
+                    <td>
+                        @Html.DisplayFor(modelItem => item.UserCompanyName)
+                    </td>
+                }
                 <td>
                     @Html.DisplayFor(modelItem => item.CompanyName)
                 </td>
@@ -53,8 +65,8 @@
 
                 <td>
                     @if ((await AuthorizationService.AuthorizeAsync(
-                  User, item,
-                  InvoiceOperations.Update)).Succeeded)
+                        User, item,
+                        InvoiceOperations.Update)).Succeeded)
                     {
                         <a asp-page="./Edit" asp-route-id="@item.InvoiceId">Edytuj</a>
                         <text> | </text>
@@ -63,8 +75,8 @@
                     <a asp-page="./Details" asp-route-id="@item.InvoiceId">Szczegóły</a>
 
                     @if ((await AuthorizationService.AuthorizeAsync(
-                  User, item,
-                  InvoiceOperations.Delete)).Succeeded)
+                        User, item,
+                        InvoiceOperations.Delete)).Succeeded)
                     {
                         <text> | </text>
                         <a asp-page="./Delete" asp-route-id="@item.InvoiceId">Usuń</a>

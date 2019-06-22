@@ -49,6 +49,7 @@ namespace InvoiceManager.Pages.Invoices
 
             Invoice.OwnerId = UserManager.GetUserId(User);
             Invoice.AccountantId = user.AccountantId;
+            Invoice.UserCompanyName = user.UserCompanyName;
 
             var isAuthorized = await AuthorizationService.AuthorizeAsync(User, Invoice, InvoiceOperations.Create);
 

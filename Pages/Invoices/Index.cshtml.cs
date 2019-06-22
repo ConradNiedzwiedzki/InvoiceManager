@@ -35,6 +35,21 @@ namespace InvoiceManager.Pages.Invoices
                 invoices = invoices.Where(i => i.AccountantId == currentUserId || i.OwnerId == currentUserId);
             }
 
+            foreach (var invoice in invoices)
+            {
+                if (string.IsNullOrEmpty(invoice.AccountantId))
+                {
+                    invoice.AccountantId =
+                        "<Nie dodałeś jeszcze ID księgowego do swojego profilu Dodaj ID księgowego, aby on również zobaczył fakturę!";
+                }
+
+                if (string.IsNullOrEmpty(invoice.AccountantId))
+                {
+                    invoice.AccountantId =
+                        "<Nie dodałeś jeszcze nazwy swojej firmy do swojego profilu!>";
+                }
+            }
+
             Invoice = await invoices.ToListAsync();
         }
     }

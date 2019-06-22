@@ -12,8 +12,8 @@ namespace InvoiceManager.Models
         [Display(Name = "ID księgowego")]
         public string AccountantId { get; set; }
 
-        [Required(ErrorMessage = "Wpisz nazwę firmy")]
-        [Display(Name = "Nazwa firmy")]
+        [Required(ErrorMessage = "Wpisz nazwę firmy do faktury")]
+        [Display(Name = "Nazwa firmy do faktury")]
         public string CompanyName { get; set; }
 
         [Required(ErrorMessage = "Wpisz datę wystawienia faktury")]
@@ -33,6 +33,9 @@ namespace InvoiceManager.Models
         public DateTime DueDate { get; set; }
 
         public InvoiceStatus Status { get; set; }
+
+        [Display(Name = "Nazwa firmy klienta")]
+        public string UserCompanyName { get; set; }
     }
 
     public enum InvoiceStatus

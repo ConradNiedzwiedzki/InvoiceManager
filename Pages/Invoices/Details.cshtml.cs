@@ -29,6 +29,18 @@ namespace InvoiceManager.Pages.Invoices
                 return NotFound();
             }
 
+            if (string.IsNullOrEmpty(Invoice.AccountantId))
+            {
+                Invoice.AccountantId =
+                    "<Nie dodałeś jeszcze ID księgowego do swojego profilu Dodaj ID księgowego, aby on również zobaczył fakturę!>";
+            }
+
+            if (string.IsNullOrEmpty(Invoice.AccountantId))
+            {
+                Invoice.AccountantId =
+                    "<Nie dodałeś jeszcze nazwy swojej firmy do swojego profilu!>";
+            }
+
             var isAuthorized = User.IsInRole(Constants.InvoiceAccountantRole) || User.IsInRole(Constants.InvoiceAdministratorsRole);
 
             var currentUserId = UserManager.GetUserId(User);

@@ -35,19 +35,32 @@
         <dd>
             @Html.DisplayFor(model => model.Invoice.DueDate)
         </dd>
-
         <dt>
             @Html.DisplayNameFor(model => model.Invoice.Status)
         </dt>
         <dd>
             @Html.DisplayFor(model => model.Invoice.Status)
         </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Invoice.AccountantId)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Invoice.AccountantId)
-        </dd>
+        <dt><br /></dt>
+        <dd><br /></dd>
+        @if (!User.IsInRole(Constants.InvoiceAccountantRole))
+        {
+            <dt>
+                @Html.DisplayNameFor(model => model.Invoice.AccountantId)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Invoice.AccountantId)
+            </dd>
+        }
+        @if (User.IsInRole(Constants.InvoiceAccountantRole) || User.IsInRole(Constants.InvoiceAdministratorsRole))
+        {
+            <dt>
+                @Html.DisplayNameFor(model => model.Invoice.UserCompanyName)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Invoice.UserCompanyName)
+            </dd>
+        }
     </dl>
 </div>
 
