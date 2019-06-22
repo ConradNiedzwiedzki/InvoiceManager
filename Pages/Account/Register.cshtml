@@ -28,6 +28,11 @@
                 <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
             </div>
             <div class="form-group">
+                <label asp-for="Input.UserCompanyName"></label>
+                <input asp-for="Input.UserCompanyName" class="form-control" />
+                <span asp-validation-for="Input.UserCompanyName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
                 <label asp-for="Input.AccountantId"></label>
                 <input asp-for="Input.AccountantId" class="form-control" />
                 <span asp-validation-for="Input.AccountantId" class="text-danger"></span>
