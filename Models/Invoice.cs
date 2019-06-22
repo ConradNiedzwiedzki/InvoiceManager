@@ -18,7 +18,7 @@ namespace InvoiceManager.Models
 
         [Required(ErrorMessage = "Wpisz datę wystawienia faktury")]
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}")]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         [Display(Name = "Data wystawienia")]
         public DateTime IssueDate { get; set; }
 
@@ -28,7 +28,7 @@ namespace InvoiceManager.Models
 
         [Required(ErrorMessage = "Wpisz datę opłacenia faktury")]
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}")]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         [Display(Name = "Termin opłacenia")]
         public DateTime DueDate { get; set; }
 

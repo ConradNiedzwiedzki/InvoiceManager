@@ -51,6 +51,9 @@ namespace InvoiceManager.Pages.Account
             [Compare("Password", ErrorMessage = "Nowe has³o i potwierdzenie nowego has³a nie pasuj¹ do siebie.")]
             public string ConfirmPassword { get; set; }
 
+            [Display(Name = "Nazwa Twojej firmy")]
+            public string UserCompanyName { get; set; }
+
             [Display(Name = "Identyfikator ksiêgowego (wype³nij, je¿eli ju¿ go posiadasz)")]
             public string AccountantId { get; set; }
         }
@@ -68,7 +71,7 @@ namespace InvoiceManager.Pages.Account
                 return Page();
             }
 
-            var user = new ApplicationUser { UserName = Input.Email, Email = Input.Email, AccountantId = Input.AccountantId};
+            var user = new ApplicationUser { UserName = Input.Email, Email = Input.Email, AccountantId = Input.AccountantId, UserCompanyName = Input.UserCompanyName};
             var result = await _userManager.CreateAsync(user, Input.Password);
 
             if (result.Succeeded)
