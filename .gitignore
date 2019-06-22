@@ -12,3 +12,5 @@ InvoiceManager.DotSettings.user
 bin/
 Migrations/
 obj/
+.vs/InvoiceManager/v16/Server/sqlite3/storage.ide-shm
+.vs/InvoiceManager/v16/Server/sqlite3/storage.ide-wal
