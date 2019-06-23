@@ -1,4 +1,6 @@
 using System;
+using System.Linq;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 using Microsoft.AspNetCore.Authorization;
@@ -8,18 +10,26 @@ using Microsoft.AspNetCore.Mvc;
 using InvoiceManager.Authorization;
 using InvoiceManager.Data;
 using InvoiceManager.Models;
+using SQLitePCL;
 
 namespace InvoiceManager.Pages.Invoices
 {
     public class CreateModel : DiBasePageModel
     {
         private readonly UserManager<ApplicationUser> _userManager;
+        private ApplicationDbContext _context;
 
         public CreateModel(ApplicationDbContext context, IAuthorizationService authorizationService, UserManager<ApplicationUser> userManager)
             : base(context, authorizationService, userManager)
         {
             _userManager = userManager;
+            _context = context;
         }
+
+        [BindProperty]
+        public Invoice Invoice { get; set; }
+
+        public List<string> ListOfCompanies { get; set; }
 
         public IActionResult OnGet()
         {
@@ -28,11 +38,13 @@ namespace InvoiceManager.Pages.Invoices
                 IssueDate = DateTime.Today,
                 DueDate = DateTime.Today
             };
+
+            ListOfCompanies = (from invoice in _context.Invoice
+                                where invoice.OwnerId == UserManager.GetUserId(User)
+                                select invoice.CompanyName).Distinct().ToList();
+
             return Page();
         }
-
-        [BindProperty]
-        public Invoice Invoice { get; set; }
 
         public async Task<IActionResult> OnPostAsync()
         {

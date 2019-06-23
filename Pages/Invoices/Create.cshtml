@@ -19,6 +19,11 @@
                 <span asp-validation-for="Invoice.CompanyName" class="text-danger"></span>
             </div>
             <div class="form-group">
+                <label asp-for="Invoice.CompanyName" class="control-label"></label>
+                <select asp-for="Invoice.CompanyName" class="form-control" asp-items="@(new SelectList(@Model.ListOfCompanies))"></select>
+                <span asp-validation-for="Invoice.CompanyName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
                 <label asp-for="Invoice.IssueDate" class="control-label"></label>
                 <input asp-for="Invoice.IssueDate" class="form-control" />
                 <span asp-validation-for="Invoice.IssueDate" class="text-danger"></span>
