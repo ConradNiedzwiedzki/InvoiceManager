@@ -1,18 +1,12 @@
-@page
-@model InvoiceManager.Pages.Invoices.IndexModel
+﻿@page
+@model InvoiceManager.Pages.Invoices.FilteredModel
 
 @{
-    ViewData["Title"] = "Lista faktur";
+    ViewData["Title"] = "Przefiltrowana lista faktur";
 }
 
-<h2>Lista faktur</h2>
+<h2>Wynik filtrowania na dzień @Model.FilterDate.ToShortDateString()</h2>
 
-<form asp-controller="Invoice" asp-action="Filter" method="get" class="filterform">
-    <p>
-        <input type="date" name="date">
-        <input type="submit" value="Filtruj listę po dacie wystawienia" />
-    </p>
-</form>
 <table class="table">
     <thead>
     <tr>
@@ -90,6 +84,4 @@
     </tbody>
 </table>
 
-<p>
-    <a asp-page="Create"><button class="btn btn-primary">Dodaj nową fakturę</button></a>
-</p>
+<a asp-page="./Index"><button class="btn btn-primary">Wyczyść filtrowanie i wróć do listy wszystkich faktur</button></a>
