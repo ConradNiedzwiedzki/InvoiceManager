@@ -11,11 +11,11 @@ namespace InvoiceManager.Pages.Account.Manage
 {
     public class TwoFactorAuthenticationModel : PageModel
     {
-        private readonly UserManager<ApplicationUser> _userManager;
+        private readonly UserManager<ApplicationUser> userManager;
 
         public TwoFactorAuthenticationModel(UserManager<ApplicationUser> userManager)
         {
-            _userManager = userManager;
+            this.userManager = userManager;
         }
 
         public bool HasAuthenticator { get; set; }
@@ -27,15 +27,15 @@ namespace InvoiceManager.Pages.Account.Manage
 
         public async Task<IActionResult> OnGet()
         {
-            var user = await _userManager.GetUserAsync(User);
+            var user = await userManager.GetUserAsync(User);
             if (user == null)
             {
-                throw new ApplicationException($"Unable to load user with ID '{_userManager.GetUserId(User)}'.");
+                throw new ApplicationException($"Unable to load user with ID '{userManager.GetUserId(User)}'.");
             }
 
-            HasAuthenticator = await _userManager.GetAuthenticatorKeyAsync(user) != null;
-            Is2FaEnabled = await _userManager.GetTwoFactorEnabledAsync(user);
-            RecoveryCodesLeft = await _userManager.CountRecoveryCodesAsync(user);
+            HasAuthenticator = await userManager.GetAuthenticatorKeyAsync(user) != null;
+            Is2FaEnabled = await userManager.GetTwoFactorEnabledAsync(user);
+            RecoveryCodesLeft = await userManager.CountRecoveryCodesAsync(user);
 
             return Page();
         }

@@ -11,12 +11,11 @@ namespace InvoiceManager.Authorization
 {
     public class InvoiceIsOwnerAuthorizationHandler : AuthorizationHandler<OperationAuthorizationRequirement, Invoice>
     {
-        private readonly UserManager<ApplicationUser> _userManager;
+        private readonly UserManager<ApplicationUser> userManager;
 
-        public InvoiceIsOwnerAuthorizationHandler(UserManager<ApplicationUser> 
-            userManager)
+        public InvoiceIsOwnerAuthorizationHandler(UserManager<ApplicationUser> userManager)
         {
-            _userManager = userManager;
+            this.userManager = userManager;
         }
 
         protected override Task HandleRequirementAsync(AuthorizationHandlerContext context, OperationAuthorizationRequirement requirement, Invoice resource)
@@ -26,13 +25,15 @@ namespace InvoiceManager.Authorization
                 return Task.CompletedTask;
             }
 
-            if (requirement.Name != Constants.CreateOperationName && requirement.Name != Constants.ReadOperationName &&
-                requirement.Name != Constants.UpdateOperationName && requirement.Name != Constants.DeleteOperationName )
+            if (requirement.Name != Constants.CreateOperationName 
+                && requirement.Name != Constants.ReadOperationName 
+                && requirement.Name != Constants.UpdateOperationName 
+                && requirement.Name != Constants.DeleteOperationName )
             {
                 return Task.CompletedTask;
             }
 
-            if (resource.OwnerId == _userManager.GetUserId(context.User))
+            if (resource.OwnerId == userManager.GetUserId(context.User))
             {
                 context.Succeed(requirement);
             }

@@ -14,13 +14,13 @@ namespace InvoiceManager.Pages.Account
     [AllowAnonymous]
     public class ForgotPasswordModel : PageModel
     {
-        private readonly UserManager<ApplicationUser> _userManager;
-        private readonly IEmailSender _emailSender;
+        private readonly UserManager<ApplicationUser> userManager;
+        private readonly IEmailSender emailSender;
 
         public ForgotPasswordModel(UserManager<ApplicationUser> userManager, IEmailSender emailSender)
         {
-            _userManager = userManager;
-            _emailSender = emailSender;
+            this.userManager = userManager;
+            this.emailSender = emailSender;
         }
 
         [BindProperty]
@@ -40,17 +40,17 @@ namespace InvoiceManager.Pages.Account
                 return Page();
             }
 
-            var user = await _userManager.FindByEmailAsync(Input.Email);
+            var user = await userManager.FindByEmailAsync(Input.Email);
 
-            if (user == null || !(await _userManager.IsEmailConfirmedAsync(user)))
+            if (user == null || !(await userManager.IsEmailConfirmedAsync(user)))
             {
                 return RedirectToPage("./ForgotPasswordConfirmation");
             }
 
-            var code = await _userManager.GeneratePasswordResetTokenAsync(user);
+            var code = await userManager.GeneratePasswordResetTokenAsync(user);
             var callbackUrl = Url.ResetPasswordCallbackLink(user.Id, code, Request.Scheme);
 
-            await _emailSender.SendResetPasswordAsync(Input.Email, callbackUrl);
+            await emailSender.SendResetPasswordAsync(Input.Email, callbackUrl);
 
             return RedirectToPage("./ForgotPasswordConfirmation");
         }

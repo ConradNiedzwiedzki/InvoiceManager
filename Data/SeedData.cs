@@ -13,21 +13,21 @@ namespace InvoiceManager.Data
 {
     public static class SeedData
     {
-        public static async Task Initialize(IServiceProvider serviceProvider, string testUserPw)
+        public static async Task Initialize(IServiceProvider serviceProvider, string testUserPassword)
         {
             using (var context = new ApplicationDbContext(serviceProvider.GetRequiredService<DbContextOptions<ApplicationDbContext>>()))
             {
-                var adminId = await EnsureUser(serviceProvider, testUserPw, "admin@niedzwiedzki.net");
+                var adminId = await EnsureUser(serviceProvider, testUserPassword, "admin@niedzwiedzki.net");
                 await EnsureRole(serviceProvider, adminId, Constants.InvoiceAdministratorsRole);
 
-                var managerId = await EnsureUser(serviceProvider, testUserPw, "manager@niedzwiedzki.net");
+                var managerId = await EnsureUser(serviceProvider, testUserPassword, "manager@niedzwiedzki.net");
                 await EnsureRole(serviceProvider, managerId, Constants.InvoiceAccountantRole);
 
                 SeedDb(context, adminId);
             }
         }
       
-        private static async Task<string> EnsureUser(IServiceProvider serviceProvider, string testUserPw, string userName)
+        private static async Task<string> EnsureUser(IServiceProvider serviceProvider, string testUserPassword, string userName)
         {
             var userManager = serviceProvider.GetService<UserManager<ApplicationUser>>();
 
@@ -38,12 +38,12 @@ namespace InvoiceManager.Data
             }
 
             user = new ApplicationUser { UserName = userName };
-            await userManager.CreateAsync(user, testUserPw);
+            await userManager.CreateAsync(user, testUserPassword);
 
             return user.Id;
         }
 
-        private static async Task<IdentityResult> EnsureRole(IServiceProvider serviceProvider, string uid, string role)
+        private static async Task<IdentityResult> EnsureRole(IServiceProvider serviceProvider, string userId, string role)
         {
             var roleManager = serviceProvider.GetService<RoleManager<IdentityRole>>();
 
@@ -53,10 +53,10 @@ namespace InvoiceManager.Data
             }
 
             var userManager = serviceProvider.GetService<UserManager<ApplicationUser>>();
-            var user = await userManager.FindByIdAsync(uid);
-            var ir = await userManager.AddToRoleAsync(user, role);
+            var user = await userManager.FindByIdAsync(userId);
+            var identityResult = await userManager.AddToRoleAsync(user, role);
 
-            return ir;
+            return identityResult;
         }
 
         public static void SeedDb(ApplicationDbContext context, string adminId)

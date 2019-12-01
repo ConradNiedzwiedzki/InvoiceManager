@@ -14,6 +14,6 @@ namespace InvoiceManager.Data
             base.OnModelCreating(builder);
         }
 
-        public DbSet<InvoiceManager.Models.Invoice> Invoice { get; set; }
+        public DbSet<Models.Invoice> Invoice { get; set; }
     }
 }
