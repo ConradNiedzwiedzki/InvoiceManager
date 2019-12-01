@@ -61,11 +61,11 @@ namespace InvoiceManager.Pages.Account.Manage
             var result = await userManager.RemoveLoginAsync(user, loginProvider, providerKey);
             if (!result.Succeeded)
             {
-                throw new ApplicationException($"Unexpected error occurred removing external login for user with ID '{user.Id}'.");
+                throw new ApplicationException(string.Format(Resources.ApplicationTexts.UnexpectedErrorWhileRemovingExternalLogin, user.Id));
             }
 
             await signInManager.SignInAsync(user, isPersistent: false);
-            StatusMessage = "Login zewnêtrzny zosta³ usuniêty.";
+            StatusMessage = Resources.ApplicationTexts.ExternalLoginRemoved;
 
             return RedirectToPage();
         }
@@ -91,18 +91,18 @@ namespace InvoiceManager.Pages.Account.Manage
             var info = await signInManager.GetExternalLoginInfoAsync(await userManager.GetUserIdAsync(user));
             if (info == null)
             {
-                throw new ApplicationException($"Unexpected error occurred loading external login info for user with ID '{user.Id}'.");
+                throw new ApplicationException(string.Format(Resources.ApplicationTexts.UnexpectedErrorWhileLoadingExternalLogin, userManager.GetUserId(User)));
             }
 
             var result = await userManager.AddLoginAsync(user, info);
             if (!result.Succeeded)
             {
-                throw new ApplicationException($"Unexpected error occurred adding external login for user with ID '{user.Id}'.");
+                throw new ApplicationException(string.Format(Resources.ApplicationTexts.UnexpectedErrorWhileAddingExternalLogin, userManager.GetUserId(User)));
             }
 
             await HttpContext.SignOutAsync(IdentityConstants.ExternalScheme);
 
-            StatusMessage = "Login zewnêtrzny zosta³ dodany.";
+            StatusMessage = Resources.ApplicationTexts.ExternalLoginAdded;
             return RedirectToPage();
         }
     }

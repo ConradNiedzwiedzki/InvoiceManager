@@ -1,15 +1,15 @@
 @page
 @model GenerateRecoveryCodesModel
 @{
-    ViewData["Title"] = "Generowanie kodów odzyskiwania uwierzytelniania dwuskładnikowego (2FA)";
-    ViewData["ActivePage"] = "TwoFactorAuthentication";
+    ViewData["Title"] = Resources.ApplicationTexts.GeneratingTwoFactorAuthenticationRecoveryCodes;
+    ViewData["ActivePage"] = Resources.ApplicationTexts.TwoFactorAuthentication;
 }
 
 <h4>@ViewData["Title"]</h4>
 <div class="alert alert-warning" role="alert">
     <p>
         <span class="glyphicon glyphicon-warning-sign"></span>
-        <strong>Ta akcja generuje nowe kody odzyskiwania.</strong>
+        <strong>@Resources.ApplicationTexts.GeneretingCodesTitle</strong>
     </p>
     <p>
         Jeśli zgubisz urządzenie i nie masz kodów odzyskiwania, utracisz dostęp do swojego konta.
@@ -22,6 +22,6 @@
 
 <div>
     <form asp-action="GenerateRecoveryCodes" method="post" class="form-group">
-        <button class="btn btn-danger" type="submit">Generuj kody odzyskiwania</button>
+        <button class="btn btn-danger" type="submit">@Resources.ApplicationTexts.GenerateCodesButton</button>
     </form>
 </div>

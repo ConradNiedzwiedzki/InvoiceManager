@@ -269,6 +269,24 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Login zewnętrzny został dodany..
+        /// </summary>
+        public static string ExternalLoginAdded {
+            get {
+                return ResourceManager.GetString("ExternalLoginAdded", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Login zewnętrzny został usunięty..
+        /// </summary>
+        public static string ExternalLoginRemoved {
+            get {
+                return ResourceManager.GetString("ExternalLoginRemoved", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Zarządzanie zewnętrznymi loginami.
         /// </summary>
         public static string ExternalLoginsManagament {
@@ -283,6 +301,33 @@ namespace Resources {
         public static string ExtrernalLogins {
             get {
                 return ResourceManager.GetString("ExtrernalLogins", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Generuj kody odzyskiwania.
+        /// </summary>
+        public static string GenerateCodesButton {
+            get {
+                return ResourceManager.GetString("GenerateCodesButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Generowanie kodów odzyskiwania uwierzytelniania dwuskładnikowego (2FA).
+        /// </summary>
+        public static string GeneratingTwoFactorAuthenticationRecoveryCodes {
+            get {
+                return ResourceManager.GetString("GeneratingTwoFactorAuthenticationRecoveryCodes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ta akcja generuje nowe kody odzyskiwania..
+        /// </summary>
+        public static string GeneretingCodesTitle {
+            get {
+                return ResourceManager.GetString("GeneretingCodesTitle", resourceCulture);
             }
         }
         
@@ -454,6 +499,33 @@ namespace Resources {
         public static string UnexpectedErrorWhenDisabling2FA {
             get {
                 return ResourceManager.GetString("UnexpectedErrorWhenDisabling2FA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Wystąpił nieoczekiwany błąd podczas dodawania zewnętrznych danych logowania dla użytkownika o identyfikatorze &apos;{0}&apos;..
+        /// </summary>
+        public static string UnexpectedErrorWhileAddingExternalLogin {
+            get {
+                return ResourceManager.GetString("UnexpectedErrorWhileAddingExternalLogin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Wystąpił nieoczekiwany błąd podczas ładowania zewnętrznych danych logowania dla użytkownika o identyfikatorze &apos;{0}&apos;..
+        /// </summary>
+        public static string UnexpectedErrorWhileLoadingExternalLogin {
+            get {
+                return ResourceManager.GetString("UnexpectedErrorWhileLoadingExternalLogin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Wystąpił nieoczekiwany błąd podczas usuwania zewnętrznego logowania dla użytkownika o identyfikatorze &apos;{0}&apos;..
+        /// </summary>
+        public static string UnexpectedErrorWhileRemovingExternalLogin {
+            get {
+                return ResourceManager.GetString("UnexpectedErrorWhileRemovingExternalLogin", resourceCulture);
             }
         }
         

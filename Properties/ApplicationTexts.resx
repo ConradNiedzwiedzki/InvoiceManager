@@ -187,11 +187,26 @@
   <data name="ErrorWhileSeedingTheDatabase" xml:space="preserve">
     <value>An error occurred while seeding the database.</value>
   </data>
+  <data name="ExternalLoginAdded" xml:space="preserve">
+    <value>Login zewnętrzny został dodany.</value>
+  </data>
+  <data name="ExternalLoginRemoved" xml:space="preserve">
+    <value>Login zewnętrzny został usunięty.</value>
+  </data>
   <data name="ExternalLoginsManagament" xml:space="preserve">
     <value>Zarządzanie zewnętrznymi loginami</value>
   </data>
   <data name="ExtrernalLogins" xml:space="preserve">
     <value>Zewnętrzne loginy</value>
+  </data>
+  <data name="GenerateCodesButton" xml:space="preserve">
+    <value>Generuj kody odzyskiwania</value>
+  </data>
+  <data name="GeneratingTwoFactorAuthenticationRecoveryCodes" xml:space="preserve">
+    <value>Generowanie kodów odzyskiwania uwierzytelniania dwuskładnikowego (2FA)</value>
+  </data>
+  <data name="GeneretingCodesTitle" xml:space="preserve">
+    <value>Ta akcja generuje nowe kody odzyskiwania.</value>
   </data>
   <data name="InsertNameOfCompanyErrorMessage" xml:space="preserve">
     <value>Wpisz nazwę firmy do faktury</value>
@@ -249,6 +264,15 @@
   </data>
   <data name="UnexpectedErrorWhenDisabling2FA" xml:space="preserve">
     <value>Wystąpił nieoczekiwany błąd podczas wyłączania 2FA dla użytkownika o identyfikatorze '{0}'.</value>
+  </data>
+  <data name="UnexpectedErrorWhileAddingExternalLogin" xml:space="preserve">
+    <value>Wystąpił nieoczekiwany błąd podczas dodawania zewnętrznych danych logowania dla użytkownika o identyfikatorze '{0}'.</value>
+  </data>
+  <data name="UnexpectedErrorWhileLoadingExternalLogin" xml:space="preserve">
+    <value>Wystąpił nieoczekiwany błąd podczas ładowania zewnętrznych danych logowania dla użytkownika o identyfikatorze '{0}'.</value>
+  </data>
+  <data name="UnexpectedErrorWhileRemovingExternalLogin" xml:space="preserve">
+    <value>Wystąpił nieoczekiwany błąd podczas usuwania zewnętrznego logowania dla użytkownika o identyfikatorze '{0}'.</value>
   </data>
   <data name="UpdateOperationName" xml:space="preserve">
     <value>Update</value>
