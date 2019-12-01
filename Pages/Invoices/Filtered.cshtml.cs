@@ -1,17 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.Serialization;
 using System.Threading.Tasks;
 
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
-using InvoiceManager.Authorization;
 using InvoiceManager.Data;
 using InvoiceManager.Models;
-using System.ComponentModel.DataAnnotations;
 
 namespace InvoiceManager.Pages.Invoices
 {
@@ -28,19 +25,21 @@ namespace InvoiceManager.Pages.Invoices
 
         public async Task OnGetAsync(DateTime date)
         {
-            var invoices = from i in Context.Invoice
+            var allInvoices = from i in Context.Invoice
                 select i;
 
-            var isAuthorized = User.IsInRole(Constants.InvoiceAdministratorsRole);
+            IQueryable<Invoice> filteredInvoices = null;
+
+            var isAuthorized = User.IsInRole(Resources.ApplicationTexts.InvoiceAdministratorsRole);
 
             var currentUserId = UserManager.GetUserId(User);
 
-            if (!isAuthorized)
+            if (isAuthorized)
             {
-                invoices = invoices.Where(i => i.IssueDate == date && (i.AccountantId == currentUserId || i.OwnerId == currentUserId));
+                filteredInvoices = allInvoices.Where(i => i.IssueDate == date && (i.AccountantId == currentUserId || i.OwnerId == currentUserId));
             }
 
-            foreach (var invoice in invoices)
+            foreach (var invoice in allInvoices)
             {
                 if (string.IsNullOrEmpty(invoice.AccountantId))
                 {
@@ -56,7 +55,7 @@ namespace InvoiceManager.Pages.Invoices
             }
 
             FilterDate = date;
-            Invoice = await invoices.ToListAsync();
+            Invoice = await filteredInvoices.ToListAsync();
         }
     }
 }

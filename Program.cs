@@ -25,16 +25,16 @@ namespace InvoiceManager
                 context.Database.Migrate();
 
                 var config = host.Services.GetRequiredService<IConfiguration>();
-                var testUserPw = config["SeedUserPW"];
+                var testUserPw = config[Resources.ApplicationTexts.SeedUserPW];
 
                 try
                 {
                     SeedData.Initialize(services, testUserPw).Wait();
                 }
-                catch (Exception ex)
+                catch (Exception exception)
                 {
                     var logger = services.GetRequiredService<ILogger<Program>>();
-                    logger.LogError(ex, "An error occurred while seeding the database.");
+                    logger.LogError(exception, Resources.ApplicationTexts.ErrorWhileSeedingTheDatabase);
                     throw;
                 }
             }

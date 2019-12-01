@@ -16,12 +16,13 @@ namespace InvoiceManager.Authorization
                 return Task.CompletedTask;
             }
 
-            if (requirement.Name != Constants.ApproveOperationName && requirement.Name != Constants.RejectOperationName)
+            if (requirement.Name != Resources.ApplicationTexts.ApproveOperationName
+                && requirement.Name != Resources.ApplicationTexts.RejectOperationName)
             {
                 return Task.CompletedTask;
             }
 
-            if (context.User.IsInRole(Constants.InvoiceAccountantRole))
+            if (context.User.IsInRole(Resources.ApplicationTexts.InvoiceAccountantRole))
             {
                 context.Succeed(requirement);
             }

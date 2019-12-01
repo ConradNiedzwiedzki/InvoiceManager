@@ -25,10 +25,10 @@ namespace InvoiceManager.Authorization
                 return Task.CompletedTask;
             }
 
-            if (requirement.Name != Constants.CreateOperationName 
-                && requirement.Name != Constants.ReadOperationName 
-                && requirement.Name != Constants.UpdateOperationName 
-                && requirement.Name != Constants.DeleteOperationName )
+            if (requirement.Name != Resources.ApplicationTexts.CreateOperationName 
+                && requirement.Name != Resources.ApplicationTexts.ReadOperationName 
+                && requirement.Name != Resources.ApplicationTexts.UpdateOperationName 
+                && requirement.Name != Resources.ApplicationTexts.DeleteOperationName )
             {
                 return Task.CompletedTask;
             }

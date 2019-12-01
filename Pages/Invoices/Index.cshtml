@@ -16,7 +16,7 @@
 <table class="table">
     <thead>
     <tr>
-        @if (User.IsInRole(Constants.InvoiceAccountantRole) || User.IsInRole(Constants.InvoiceAdministratorsRole))
+        @if (User.IsInRole(Resources.ApplicationTexts.InvoiceAccountantRole) || User.IsInRole(Resources.ApplicationTexts.InvoiceAdministratorsRole))
         {
             <th>
                 @Html.DisplayNameFor(model => model.Invoice[0].UserCompanyName)
@@ -44,7 +44,7 @@
     @foreach (var item in Model.Invoice)
     {
         <tr>
-            @if (User.IsInRole(Constants.InvoiceAccountantRole) || User.IsInRole(Constants.InvoiceAdministratorsRole))
+            @if (User.IsInRole(Resources.ApplicationTexts.InvoiceAccountantRole) || User.IsInRole(Resources.ApplicationTexts.InvoiceAdministratorsRole))
             {
                 <td>
                     @Html.DisplayFor(modelItem => item.UserCompanyName)

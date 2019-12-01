@@ -6,7 +6,6 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
-using InvoiceManager.Authorization;
 using InvoiceManager.Data;
 using InvoiceManager.Models;
 
@@ -26,7 +25,7 @@ namespace InvoiceManager.Pages.Invoices
             var invoices = from i in Context.Invoice
                             select i;
 
-            var isAuthorized = User.IsInRole(Constants.InvoiceAdministratorsRole);
+            var isAuthorized = User.IsInRole(Resources.ApplicationTexts.InvoiceAdministratorsRole);
 
             var currentUserId = UserManager.GetUserId(User);
 

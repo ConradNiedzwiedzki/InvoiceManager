@@ -41,7 +41,7 @@ namespace InvoiceManager.Pages.Invoices
                     "<Nie dodałeś jeszcze nazwy swojej firmy do swojego profilu!>";
             }
 
-            var isAuthorized = User.IsInRole(Constants.InvoiceAccountantRole) || User.IsInRole(Constants.InvoiceAdministratorsRole);
+            var isAuthorized = User.IsInRole(Resources.ApplicationTexts.InvoiceAccountantRole) || User.IsInRole(Resources.ApplicationTexts.InvoiceAdministratorsRole);
 
             var currentUserId = UserManager.GetUserId(User);
 

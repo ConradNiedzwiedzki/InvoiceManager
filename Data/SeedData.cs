@@ -6,7 +6,6 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
-using InvoiceManager.Authorization;
 using InvoiceManager.Models;
 
 namespace InvoiceManager.Data
@@ -18,10 +17,10 @@ namespace InvoiceManager.Data
             using (var context = new ApplicationDbContext(serviceProvider.GetRequiredService<DbContextOptions<ApplicationDbContext>>()))
             {
                 var adminId = await EnsureUser(serviceProvider, testUserPassword, "admin@niedzwiedzki.net");
-                await EnsureRole(serviceProvider, adminId, Constants.InvoiceAdministratorsRole);
+                await EnsureRole(serviceProvider, adminId, Resources.ApplicationTexts.InvoiceAdministratorsRole);
 
                 var managerId = await EnsureUser(serviceProvider, testUserPassword, "manager@niedzwiedzki.net");
-                await EnsureRole(serviceProvider, managerId, Constants.InvoiceAccountantRole);
+                await EnsureRole(serviceProvider, managerId, Resources.ApplicationTexts.InvoiceAccountantRole);
 
                 SeedDb(context, adminId);
             }

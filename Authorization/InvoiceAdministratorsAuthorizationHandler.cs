@@ -16,7 +16,7 @@ namespace InvoiceManager.Authorization
                 return Task.CompletedTask;
             }
 
-            if (context.User.IsInRole(Constants.InvoiceAdministratorsRole))
+            if (context.User.IsInRole(Resources.ApplicationTexts.InvoiceAdministratorsRole))
             {
                 context.Succeed(requirement);
             }

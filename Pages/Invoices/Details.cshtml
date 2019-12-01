@@ -43,7 +43,7 @@
         </dd>
         <dt><br /></dt>
         <dd><br /></dd>
-        @if (!User.IsInRole(Constants.InvoiceAccountantRole))
+        @if (!User.IsInRole(Resources.ApplicationTexts.InvoiceAccountantRole))
         {
             <dt>
                 @Html.DisplayNameFor(model => model.Invoice.AccountantId)
@@ -52,7 +52,7 @@
                 @Html.DisplayFor(model => model.Invoice.AccountantId)
             </dd>
         }
-        @if (User.IsInRole(Constants.InvoiceAccountantRole) || User.IsInRole(Constants.InvoiceAdministratorsRole))
+        @if (User.IsInRole(Resources.ApplicationTexts.InvoiceAccountantRole) || User.IsInRole(Resources.ApplicationTexts.InvoiceAdministratorsRole))
         {
             <dt>
                 @Html.DisplayNameFor(model => model.Invoice.UserCompanyName)
