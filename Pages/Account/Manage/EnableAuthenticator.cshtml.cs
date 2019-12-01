@@ -75,13 +75,13 @@ namespace InvoiceManager.Pages.Account.Manage
 
             if (!is2FaTokenValid)
             {
-                ModelState.AddModelError("Input.Code", "Verification code is invalid.");
+                ModelState.AddModelError("Input.Code", Resources.ApplicationTexts.VerificationCodeIsInvalid);
                 await LoadSharedKeyAndQrCodeUriAsync(user);
                 return Page();
             }
 
             await userManager.SetTwoFactorEnabledAsync(user, true);
-            logger.LogInformation("User with ID '{UserId}' has enabled 2FA with an authenticator app.", user.Id);
+            logger.LogInformation(string.Format(Resources.ApplicationTexts.UserEnabled2FAWithAuth, user.Id));
 
             var recoveryCodes = await userManager.GenerateNewTwoFactorRecoveryCodesAsync(user, 10);
             TempData["RecoveryCodes"] = recoveryCodes.ToArray();

@@ -46,7 +46,7 @@ namespace InvoiceManager.Pages.Account.Manage
             var user = await userManager.GetUserAsync(User);
             if (user == null)
             {
-                throw new ApplicationException($"Unable to load user with ID '{userManager.GetUserId(User)}'.");
+                throw new ApplicationException(string.Format(Resources.ApplicationTexts.UnableToLoadUserWithId, userManager.GetUserId(User)));
             }
 
             var hasPassword = await userManager.HasPasswordAsync(user);
@@ -69,7 +69,7 @@ namespace InvoiceManager.Pages.Account.Manage
             var user = await userManager.GetUserAsync(User);
             if (user == null)
             {
-                throw new ApplicationException($"Unable to load user with ID '{userManager.GetUserId(User)}'.");
+                throw new ApplicationException(string.Format(Resources.ApplicationTexts.UnableToLoadUserWithId, userManager.GetUserId(User)));
             }
 
             var addPasswordResult = await userManager.AddPasswordAsync(user, Input.NewPassword);

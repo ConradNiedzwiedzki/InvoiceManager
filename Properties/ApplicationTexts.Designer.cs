@@ -98,6 +98,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Dodaj kolejną usługę do logowania..
+        /// </summary>
+        public static string AddAnotherLoginService {
+            get {
+                return ResourceManager.GetString("AddAnotherLoginService", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to admin@niedzwiedzki.net.
         /// </summary>
         public static string AdminEmail {
@@ -260,6 +269,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Zarządzanie zewnętrznymi loginami.
+        /// </summary>
+        public static string ExternalLoginsManagament {
+            get {
+                return ResourceManager.GetString("ExternalLoginsManagament", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Zewnętrzne loginy.
         /// </summary>
         public static string ExtrernalLogins {
@@ -292,6 +310,15 @@ namespace Resources {
         public static string InvoiceAdministratorsRole {
             get {
                 return ResourceManager.GetString("InvoiceAdministratorsRole", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zaloguj używając konta {0}.
+        /// </summary>
+        public static string LoginWithAccount {
+            get {
+                return ResourceManager.GetString("LoginWithAccount", resourceCulture);
             }
         }
         
@@ -350,11 +377,38 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ZarejestrowaneLoginy.
+        /// </summary>
+        public static string RegisteredLogins {
+            get {
+                return ResourceManager.GetString("RegisteredLogins", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Reject.
         /// </summary>
         public static string RejectOperationName {
             get {
                 return ResourceManager.GetString("RejectOperationName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Usuń.
+        /// </summary>
+        public static string Remove {
+            get {
+                return ResourceManager.GetString("Remove", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Usuń {0} login ze swojego konta.
+        /// </summary>
+        public static string RemoveLoginFromYourAccount {
+            get {
+                return ResourceManager.GetString("RemoveLoginFromYourAccount", resourceCulture);
             }
         }
         
@@ -440,6 +494,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Użytkownik o identyfikatorze &apos;{0}&apos; włączył 2FA z aplikacją uwierzytelniającą..
+        /// </summary>
+        public static string UserEnabled2FAWithAuth {
+            get {
+                return ResourceManager.GetString("UserEnabled2FAWithAuth", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to User logged out..
         /// </summary>
         public static string UserLoggedOut {
@@ -454,6 +517,15 @@ namespace Resources {
         public static string VerificationCode {
             get {
                 return ResourceManager.GetString("VerificationCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kod weryfikacyjny jest nieprawidłowy..
+        /// </summary>
+        public static string VerificationCodeIsInvalid {
+            get {
+                return ResourceManager.GetString("VerificationCodeIsInvalid", resourceCulture);
             }
         }
         

@@ -130,6 +130,9 @@
   <data name="AccountManagement" xml:space="preserve">
     <value>Zarządzanie kontem</value>
   </data>
+  <data name="AddAnotherLoginService" xml:space="preserve">
+    <value>Dodaj kolejną usługę do logowania.</value>
+  </data>
   <data name="AdminEmail" xml:space="preserve">
     <value>admin@niedzwiedzki.net</value>
   </data>
@@ -184,6 +187,9 @@
   <data name="ErrorWhileSeedingTheDatabase" xml:space="preserve">
     <value>An error occurred while seeding the database.</value>
   </data>
+  <data name="ExternalLoginsManagament" xml:space="preserve">
+    <value>Zarządzanie zewnętrznymi loginami</value>
+  </data>
   <data name="ExtrernalLogins" xml:space="preserve">
     <value>Zewnętrzne loginy</value>
   </data>
@@ -195,6 +201,9 @@
   </data>
   <data name="InvoiceAdministratorsRole" xml:space="preserve">
     <value>InvoiceAdministrators</value>
+  </data>
+  <data name="LoginWithAccount" xml:space="preserve">
+    <value>Zaloguj używając konta {0}</value>
   </data>
   <data name="ManagerEmail" xml:space="preserve">
     <value>manager@niedzwiedzki.net</value>
@@ -214,8 +223,17 @@
   <data name="ReadOperationName" xml:space="preserve">
     <value>Read</value>
   </data>
+  <data name="RegisteredLogins" xml:space="preserve">
+    <value>ZarejestrowaneLoginy</value>
+  </data>
   <data name="RejectOperationName" xml:space="preserve">
     <value>Reject</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>Usuń</value>
+  </data>
+  <data name="RemoveLoginFromYourAccount" xml:space="preserve">
+    <value>Usuń {0} login ze swojego konta</value>
   </data>
   <data name="ResetYourPasswordByClickingHere" xml:space="preserve">
     <value>Zresetuj swoje hasło &lt;a href='{0}'&gt;klikając tutaj&lt;/a&gt;.</value>
@@ -244,11 +262,17 @@
   <data name="UserDisabled2FA" xml:space="preserve">
     <value>Użytkownik o identyfikatorze '{0}' wyłączył 2fa.</value>
   </data>
+  <data name="UserEnabled2FAWithAuth" xml:space="preserve">
+    <value>Użytkownik o identyfikatorze '{0}' włączył 2FA z aplikacją uwierzytelniającą.</value>
+  </data>
   <data name="UserLoggedOut" xml:space="preserve">
     <value>User logged out.</value>
   </data>
   <data name="VerificationCode" xml:space="preserve">
     <value>Kod weryfikacyjny</value>
+  </data>
+  <data name="VerificationCodeIsInvalid" xml:space="preserve">
+    <value>Kod weryfikacyjny jest nieprawidłowy.</value>
   </data>
   <data name="Verify" xml:space="preserve">
     <value>Zweryfikuj</value>

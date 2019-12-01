@@ -52,7 +52,7 @@ namespace InvoiceManager.Pages.Account.Manage
             var user = await userManager.GetUserAsync(User);
             if (user == null)
             {
-                throw new ApplicationException($"Unable to load user with ID '{userManager.GetUserId(User)}'.");
+                throw new ApplicationException(string.Format(Resources.ApplicationTexts.UnableToLoadUserWithId, userManager.GetUserId(User)));
             }
 
             Username = user.UserName;
@@ -79,7 +79,7 @@ namespace InvoiceManager.Pages.Account.Manage
             var user = await userManager.GetUserAsync(User);
             if (user == null)
             {
-                throw new ApplicationException($"Unable to load user with ID '{userManager.GetUserId(User)}'.");
+                throw new ApplicationException(string.Format(Resources.ApplicationTexts.UnableToLoadUserWithId, userManager.GetUserId(User)));
             }
 
             if (Input.Email != user.Email)
@@ -122,7 +122,7 @@ namespace InvoiceManager.Pages.Account.Manage
             var user = await userManager.GetUserAsync(User);
             if (user == null)
             {
-                throw new ApplicationException($"Unable to load user with ID '{userManager.GetUserId(User)}'.");
+                throw new ApplicationException(string.Format(Resources.ApplicationTexts.UnableToLoadUserWithId, userManager.GetUserId(User)));
             }
 
             var code = await userManager.GenerateEmailConfirmationTokenAsync(user);
