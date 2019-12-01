@@ -20,8 +20,6 @@ namespace InvoiceManager.Pages.Account.Manage
         private readonly ILogger<EnableAuthenticatorModel> logger;
         private readonly UrlEncoder urlEncoder;
 
-        private const string AuthenticatorUriFormat = "otpauth://totp/{0}:{1}?secret={2}&issuer={0}&digits=6";
-
         public EnableAuthenticatorModel(UserManager<ApplicationUser> userManager, ILogger<EnableAuthenticatorModel> logger, UrlEncoder urlEncoder)
         {
             this.userManager = userManager;
@@ -50,7 +48,7 @@ namespace InvoiceManager.Pages.Account.Manage
             var user = await userManager.GetUserAsync(User);
             if (user == null)
             {
-                throw new ApplicationException($"Unable to load user with ID '{userManager.GetUserId(User)}'.");
+                throw new ApplicationException(string.Format(Resources.ApplicationTexts.UnableToLoadUserWithId, userManager.GetUserId(User)));
             }
 
             await LoadSharedKeyAndQrCodeUriAsync(user);
@@ -63,7 +61,7 @@ namespace InvoiceManager.Pages.Account.Manage
             var user = await userManager.GetUserAsync(User);
             if (user == null)
             {
-                throw new ApplicationException($"Unable to load user with ID '{userManager.GetUserId(User)}'.");
+                throw new ApplicationException(string.Format(Resources.ApplicationTexts.UnableToLoadUserWithId, userManager.GetUserId(User)));
             }
 
             if (!ModelState.IsValid)
@@ -122,7 +120,7 @@ namespace InvoiceManager.Pages.Account.Manage
 
         private string GenerateQrCodeUri(string email, string unformattedKey)
         {
-            return string.Format(AuthenticatorUriFormat, urlEncoder.Encode("InvoiceManager"), urlEncoder.Encode(email), unformattedKey);
+            return string.Format(Resources.ApplicationTexts.AuthenticatorUriFormat, urlEncoder.Encode("InvoiceManager"), urlEncoder.Encode(email), unformattedKey);
         }
     }
 }

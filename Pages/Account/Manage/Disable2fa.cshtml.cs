@@ -26,12 +26,12 @@ namespace InvoiceManager.Pages.Account.Manage
             var user = await userManager.GetUserAsync(User);
             if (user == null)
             {
-                throw new ApplicationException($"Unable to load user with ID '{userManager.GetUserId(User)}'.");
+                throw new ApplicationException(string.Format(Resources.ApplicationTexts.UnableToLoadUserWithId,userManager.GetUserId(User)));
             }
 
             if (!await userManager.GetTwoFactorEnabledAsync(user))
             {
-                throw new ApplicationException($"Cannot disable 2FA for user with ID '{userManager.GetUserId(User)}' as it's not currently enabled.");
+                throw new ApplicationException(string.Format(Resources.ApplicationTexts.CannotDisable2FA, userManager.GetUserId(User)));
             }
 
             return Page();
@@ -42,16 +42,16 @@ namespace InvoiceManager.Pages.Account.Manage
             var user = await userManager.GetUserAsync(User);
             if (user == null)
             {
-                throw new ApplicationException($"Unable to load user with ID '{userManager.GetUserId(User)}'.");
+                throw new ApplicationException(string.Format(Resources.ApplicationTexts.UnableToLoadUserWithId, userManager.GetUserId(User)));
             }
 
             var disable2FaResult = await userManager.SetTwoFactorEnabledAsync(user, false);
             if (!disable2FaResult.Succeeded)
             {
-                throw new ApplicationException($"Unexpected error occurred disabling 2FA for user with ID '{userManager.GetUserId(User)}'.");
+                throw new ApplicationException(string.Format(Resources.ApplicationTexts.UnexpectedErrorWhenDisabling2FA, userManager.GetUserId(User)));
             }
 
-            logger.LogInformation("User with ID '{UserId}' has disabled 2fa.", userManager.GetUserId(User));
+            logger.LogInformation(string.Format(Resources.ApplicationTexts.UserDisabled2FA, userManager.GetUserId(User)));
 
             return RedirectToPage("./TwoFactorAuthentication");
         }

@@ -7,12 +7,12 @@ namespace InvoiceManager.Services
     {
         public static Task SendEmailConfirmationAsync(this IEmailSender emailSender, string email, string link)
         {
-            return emailSender.SendEmailAsync(email, "PotwierdŸ adres e-mail", $"PotwierdŸ proszê swój adres e-mail <a href='{HtmlEncoder.Default.Encode(link)}'>klikaj¹c tutaj</a>.");
+            return emailSender.SendEmailAsync(email, Resources.ApplicationTexts.ConfirmEmailAdress, string.Format(Resources.ApplicationTexts.ConfirmEmailAdressByClickingHere, HtmlEncoder.Default.Encode(link)));
         }
 
         public static Task SendResetPasswordAsync(this IEmailSender emailSender, string email, string callbackUrl)
         {
-            return emailSender.SendEmailAsync(email, "Resetowanie has³a", $"Zresetuj swoje has³o <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>klikaj¹c tutaj</a>.");
+            return emailSender.SendEmailAsync(email, Resources.ApplicationTexts.PasswordReset, string.Format(Resources.ApplicationTexts.ResetYourPasswordByClickingHere, HtmlEncoder.Default.Encode(callbackUrl)));
         }
     }
 }

@@ -25,7 +25,7 @@ namespace InvoiceManager.Controllers
         public async Task<IActionResult> Logout()
         {
             await signInManager.SignOutAsync();
-            logger.LogInformation("User logged out.");
+            logger.LogInformation(Resources.ApplicationTexts.UserLoggedOut);
             return RedirectToPage("/Index");
         }
     }

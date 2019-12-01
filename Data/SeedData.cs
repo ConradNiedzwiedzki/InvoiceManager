@@ -16,10 +16,10 @@ namespace InvoiceManager.Data
         {
             using (var context = new ApplicationDbContext(serviceProvider.GetRequiredService<DbContextOptions<ApplicationDbContext>>()))
             {
-                var adminId = await EnsureUser(serviceProvider, testUserPassword, "admin@niedzwiedzki.net");
+                var adminId = await EnsureUser(serviceProvider, testUserPassword, Resources.ApplicationTexts.AdminEmail);
                 await EnsureRole(serviceProvider, adminId, Resources.ApplicationTexts.InvoiceAdministratorsRole);
 
-                var managerId = await EnsureUser(serviceProvider, testUserPassword, "manager@niedzwiedzki.net");
+                var managerId = await EnsureUser(serviceProvider, testUserPassword, Resources.ApplicationTexts.ManagerEmail);
                 await EnsureRole(serviceProvider, managerId, Resources.ApplicationTexts.InvoiceAccountantRole);
 
                 SeedDb(context, adminId);

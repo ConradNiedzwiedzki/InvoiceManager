@@ -54,7 +54,7 @@ namespace InvoiceManager.Pages.Account.Manage
             var user = await userManager.GetUserAsync(User);
             if (user == null)
             {
-                throw new ApplicationException($"Unable to load user with ID '{userManager.GetUserId(User)}'.");
+                throw new ApplicationException(string.Format(Resources.ApplicationTexts.UnableToLoadUserWithId, userManager.GetUserId(User)));
             }
 
             var hasPassword = await userManager.HasPasswordAsync(user);
@@ -76,7 +76,7 @@ namespace InvoiceManager.Pages.Account.Manage
             var user = await userManager.GetUserAsync(User);
             if (user == null)
             {
-                throw new ApplicationException($"Unable to load user with ID '{userManager.GetUserId(User)}'.");
+                throw new ApplicationException(string.Format(Resources.ApplicationTexts.UnableToLoadUserWithId, userManager.GetUserId(User)));
             }
 
             var changePasswordResult = await userManager.ChangePasswordAsync(user, Input.OldPassword, Input.NewPassword);
@@ -91,8 +91,8 @@ namespace InvoiceManager.Pages.Account.Manage
             }
 
             await signInManager.SignInAsync(user, isPersistent: false);
-            logger.LogInformation("User changed their password successfully.");
-            StatusMessage = "Twoje has³o zosta³o zmienione.";
+            logger.LogInformation(Resources.ApplicationTexts.UserChangedTheirPasswordSuccessfully);
+            StatusMessage = Resources.ApplicationTexts.YourPasswordHasBeenChanged;
 
             return RedirectToPage();
         }

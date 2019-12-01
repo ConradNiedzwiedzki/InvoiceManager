@@ -61,11 +61,39 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Wyłączenie 2FA nie zmienia kluczy używanych w aplikacjach uwierzytelniających. Jeśli chcesz zmienić klucz
+        ///        używany w aplikacji uwierzytelniającej, powinieneś &lt;a asp-page=&quot;./ResetAuthenticator&quot;&gt;zresetować klucze uwierzytelniające.&lt;/a&gt;.
+        /// </summary>
+        public static string About2FADisabling {
+            get {
+                return ResourceManager.GetString("About2FADisabling", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ta akcja służy tylko do wyłączenia 2FA..
+        /// </summary>
+        public static string About2FADisablingTitle {
+            get {
+                return ResourceManager.GetString("About2FADisablingTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to ID księgowego.
         /// </summary>
         public static string AccountantID {
             get {
                 return ResourceManager.GetString("AccountantID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zarządzanie kontem.
+        /// </summary>
+        public static string AccountManagement {
+            get {
+                return ResourceManager.GetString("AccountManagement", resourceCulture);
             }
         }
         
@@ -88,6 +116,69 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Konfiguracja aplikacji uwierzytelniającej.
+        /// </summary>
+        public static string AuthConfiguration {
+            get {
+                return ResourceManager.GetString("AuthConfiguration", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to otpauth://totp/{0}:{1}?secret={2}&amp;issuer={0}&amp;digits=6.
+        /// </summary>
+        public static string AuthenticatorUriFormat {
+            get {
+                return ResourceManager.GetString("AuthenticatorUriFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nie można wyłączyć 2FA dla użytkownika o identyfikatorze &apos;{0}&apos;, ponieważ nie jest obecnie włączony..
+        /// </summary>
+        public static string CannotDisable2FA {
+            get {
+                return ResourceManager.GetString("CannotDisable2FA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zmień hasło.
+        /// </summary>
+        public static string ChangePassword {
+            get {
+                return ResourceManager.GetString("ChangePassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zmień ustawienia swojego konta.
+        /// </summary>
+        public static string ChangeYourAccountSettings {
+            get {
+                return ResourceManager.GetString("ChangeYourAccountSettings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Potwierdź adres e-mail.
+        /// </summary>
+        public static string ConfirmEmailAdress {
+            get {
+                return ResourceManager.GetString("ConfirmEmailAdress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Potwierdź proszę swój adres e-mail &lt;a href=&apos;{0}&apos;&gt;klikając tutaj&lt;/a&gt;..
+        /// </summary>
+        public static string ConfirmEmailAdressByClickingHere {
+            get {
+                return ResourceManager.GetString("ConfirmEmailAdressByClickingHere", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Create.
         /// </summary>
         public static string CreateOperationName {
@@ -106,11 +197,74 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Wyłącz uwierzytelnienie dwuskładnikowe (2FA).
+        /// </summary>
+        public static string Disable2FA {
+            get {
+                return ResourceManager.GetString("Disable2FA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Wyłącz 2FA.
+        /// </summary>
+        public static string Disable2FAButton {
+            get {
+                return ResourceManager.GetString("Disable2FAButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pobierz aplikację do uwierzytelniania dwuskładnikowego, taką jak Microsoft Authenticator &lt;a href=&quot;https://go.microsoft.com/fwlink/?Linkid=825071&quot;&gt;Windows Phone&lt;/a&gt;, &lt;a href=&quot;https://go.microsoft.com/fwlink/?Linkid=825072&quot;&gt;Android&lt;/a&gt; lub &lt;a href=&quot;https://go.microsoft.com/fwlink/?Linkid=825073&quot;&gt;iOS&lt;/a&gt; albo Google Authenticator dla &lt;a href=&quot;https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2&amp;amp;hl=en&quot;&gt;Android&lt;/a&gt; lub &lt;a href=&quot;https://itunes.apple.com/us/app/google-authentica [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string EnableAuthStep1 {
+            get {
+                return ResourceManager.GetString("EnableAuthStep1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Wprowadź ten klucz &lt;kbd&gt;{0}&lt;/kbd&gt; do Twojej aplikacji do uwierzytelniania dwuskładnikowego. Wielkość liter i spacje nie mają znaczenia..
+        /// </summary>
+        public static string EnableAuthStep2 {
+            get {
+                return ResourceManager.GetString("EnableAuthStep2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Po wprowadzeniu powyższego klucza, Twoja aplikacja do uwierzytelniania dwuskładnikowego zapewni Ci dostęp z unikalnym kodem. Wprowadź kod w polu potwierdzenia poniżej..
+        /// </summary>
+        public static string EnableAuthStep3 {
+            get {
+                return ResourceManager.GetString("EnableAuthStep3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Aby użyć aplikacji uwierzytelniającej, wykonaj następujące kroki:.
+        /// </summary>
+        public static string EnableAuthSteps {
+            get {
+                return ResourceManager.GetString("EnableAuthSteps", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to An error occurred while seeding the database..
         /// </summary>
         public static string ErrorWhileSeedingTheDatabase {
             get {
                 return ResourceManager.GetString("ErrorWhileSeedingTheDatabase", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zewnętrzne loginy.
+        /// </summary>
+        public static string ExtrernalLogins {
+            get {
+                return ResourceManager.GetString("ExtrernalLogins", resourceCulture);
             }
         }
         
@@ -160,6 +314,33 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Zmiana hasła.
+        /// </summary>
+        public static string PasswordChange {
+            get {
+                return ResourceManager.GetString("PasswordChange", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Resetowanie hasła.
+        /// </summary>
+        public static string PasswordReset {
+            get {
+                return ResourceManager.GetString("PasswordReset", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Profil.
+        /// </summary>
+        public static string Profile {
+            get {
+                return ResourceManager.GetString("Profile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Read.
         /// </summary>
         public static string ReadOperationName {
@@ -178,6 +359,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Zresetuj swoje hasło &lt;a href=&apos;{0}&apos;&gt;klikając tutaj&lt;/a&gt;..
+        /// </summary>
+        public static string ResetYourPasswordByClickingHere {
+            get {
+                return ResourceManager.GetString("ResetYourPasswordByClickingHere", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to SeedUserPW.
         /// </summary>
         public static string SeedUserPW {
@@ -187,11 +377,101 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Uwierzytelnianie dwuskładnikowe.
+        /// </summary>
+        public static string TwoFactorAuthentication {
+            get {
+                return ResourceManager.GetString("TwoFactorAuthentication", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nie można załadować użytkownika z ID = {0}..
+        /// </summary>
+        public static string UnableToLoadUserWithId {
+            get {
+                return ResourceManager.GetString("UnableToLoadUserWithId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Wystąpił nieoczekiwany błąd podczas wyłączania 2FA dla użytkownika o identyfikatorze &apos;{0}&apos;..
+        /// </summary>
+        public static string UnexpectedErrorWhenDisabling2FA {
+            get {
+                return ResourceManager.GetString("UnexpectedErrorWhenDisabling2FA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Update.
         /// </summary>
         public static string UpdateOperationName {
             get {
                 return ResourceManager.GetString("UpdateOperationName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zaktualizuj hasło.
+        /// </summary>
+        public static string UpdateYourPassword {
+            get {
+                return ResourceManager.GetString("UpdateYourPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Użytkownik zmienił swoje hasło..
+        /// </summary>
+        public static string UserChangedTheirPasswordSuccessfully {
+            get {
+                return ResourceManager.GetString("UserChangedTheirPasswordSuccessfully", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Użytkownik o identyfikatorze &apos;{0}&apos; wyłączył 2fa..
+        /// </summary>
+        public static string UserDisabled2FA {
+            get {
+                return ResourceManager.GetString("UserDisabled2FA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User logged out..
+        /// </summary>
+        public static string UserLoggedOut {
+            get {
+                return ResourceManager.GetString("UserLoggedOut", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kod weryfikacyjny.
+        /// </summary>
+        public static string VerificationCode {
+            get {
+                return ResourceManager.GetString("VerificationCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zweryfikuj.
+        /// </summary>
+        public static string Verify {
+            get {
+                return ResourceManager.GetString("Verify", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Twoje hasło zostało zmienione..
+        /// </summary>
+        public static string YourPasswordHasBeenChanged {
+            get {
+                return ResourceManager.GetString("YourPasswordHasBeenChanged", resourceCulture);
             }
         }
     }

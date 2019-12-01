@@ -117,8 +117,18 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="About2FADisabling" xml:space="preserve">
+    <value>Wyłączenie 2FA nie zmienia kluczy używanych w aplikacjach uwierzytelniających. Jeśli chcesz zmienić klucz
+        używany w aplikacji uwierzytelniającej, powinieneś &lt;a asp-page="./ResetAuthenticator"&gt;zresetować klucze uwierzytelniające.&lt;/a&gt;</value>
+  </data>
+  <data name="About2FADisablingTitle" xml:space="preserve">
+    <value>Ta akcja służy tylko do wyłączenia 2FA.</value>
+  </data>
   <data name="AccountantID" xml:space="preserve">
     <value>ID księgowego</value>
+  </data>
+  <data name="AccountManagement" xml:space="preserve">
+    <value>Zarządzanie kontem</value>
   </data>
   <data name="AdminEmail" xml:space="preserve">
     <value>admin@niedzwiedzki.net</value>
@@ -126,14 +136,56 @@
   <data name="ApproveOperationName" xml:space="preserve">
     <value>Approve</value>
   </data>
+  <data name="AuthConfiguration" xml:space="preserve">
+    <value>Konfiguracja aplikacji uwierzytelniającej</value>
+  </data>
+  <data name="AuthenticatorUriFormat" xml:space="preserve">
+    <value>otpauth://totp/{0}:{1}?secret={2}&amp;issuer={0}&amp;digits=6</value>
+  </data>
+  <data name="CannotDisable2FA" xml:space="preserve">
+    <value>Nie można wyłączyć 2FA dla użytkownika o identyfikatorze '{0}', ponieważ nie jest obecnie włączony.</value>
+  </data>
+  <data name="ChangePassword" xml:space="preserve">
+    <value>Zmień hasło</value>
+  </data>
+  <data name="ChangeYourAccountSettings" xml:space="preserve">
+    <value>Zmień ustawienia swojego konta</value>
+  </data>
+  <data name="ConfirmEmailAdress" xml:space="preserve">
+    <value>Potwierdź adres e-mail</value>
+  </data>
+  <data name="ConfirmEmailAdressByClickingHere" xml:space="preserve">
+    <value>Potwierdź proszę swój adres e-mail &lt;a href='{0}'&gt;klikając tutaj&lt;/a&gt;.</value>
+  </data>
   <data name="CreateOperationName" xml:space="preserve">
     <value>Create</value>
   </data>
   <data name="DeleteOperationName" xml:space="preserve">
     <value>Delete</value>
   </data>
+  <data name="Disable2FA" xml:space="preserve">
+    <value>Wyłącz uwierzytelnienie dwuskładnikowe (2FA)</value>
+  </data>
+  <data name="Disable2FAButton" xml:space="preserve">
+    <value>Wyłącz 2FA</value>
+  </data>
+  <data name="EnableAuthStep1" xml:space="preserve">
+    <value>Pobierz aplikację do uwierzytelniania dwuskładnikowego, taką jak Microsoft Authenticator &lt;a href="https://go.microsoft.com/fwlink/?Linkid=825071"&gt;Windows Phone&lt;/a&gt;, &lt;a href="https://go.microsoft.com/fwlink/?Linkid=825072"&gt;Android&lt;/a&gt; lub &lt;a href="https://go.microsoft.com/fwlink/?Linkid=825073"&gt;iOS&lt;/a&gt; albo Google Authenticator dla &lt;a href="https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2&amp;amp;hl=en"&gt;Android&lt;/a&gt; lub &lt;a href="https://itunes.apple.com/us/app/google-authenticator/id388497605?mt=8"&gt;iOS&lt;/a&gt;.</value>
+  </data>
+  <data name="EnableAuthStep2" xml:space="preserve">
+    <value>Wprowadź ten klucz &lt;kbd&gt;{0}&lt;/kbd&gt; do Twojej aplikacji do uwierzytelniania dwuskładnikowego. Wielkość liter i spacje nie mają znaczenia.</value>
+  </data>
+  <data name="EnableAuthStep3" xml:space="preserve">
+    <value>Po wprowadzeniu powyższego klucza, Twoja aplikacja do uwierzytelniania dwuskładnikowego zapewni Ci dostęp z unikalnym kodem. Wprowadź kod w polu potwierdzenia poniżej.</value>
+  </data>
+  <data name="EnableAuthSteps" xml:space="preserve">
+    <value>Aby użyć aplikacji uwierzytelniającej, wykonaj następujące kroki:</value>
+  </data>
   <data name="ErrorWhileSeedingTheDatabase" xml:space="preserve">
     <value>An error occurred while seeding the database.</value>
+  </data>
+  <data name="ExtrernalLogins" xml:space="preserve">
+    <value>Zewnętrzne loginy</value>
   </data>
   <data name="InsertNameOfCompanyErrorMessage" xml:space="preserve">
     <value>Wpisz nazwę firmy do faktury</value>
@@ -150,16 +202,58 @@
   <data name="NameOfCompany" xml:space="preserve">
     <value>Nazwa firmy do faktury</value>
   </data>
+  <data name="PasswordChange" xml:space="preserve">
+    <value>Zmiana hasła</value>
+  </data>
+  <data name="PasswordReset" xml:space="preserve">
+    <value>Resetowanie hasła</value>
+  </data>
+  <data name="Profile" xml:space="preserve">
+    <value>Profil</value>
+  </data>
   <data name="ReadOperationName" xml:space="preserve">
     <value>Read</value>
   </data>
   <data name="RejectOperationName" xml:space="preserve">
     <value>Reject</value>
   </data>
+  <data name="ResetYourPasswordByClickingHere" xml:space="preserve">
+    <value>Zresetuj swoje hasło &lt;a href='{0}'&gt;klikając tutaj&lt;/a&gt;.</value>
+  </data>
   <data name="SeedUserPW" xml:space="preserve">
     <value>SeedUserPW</value>
   </data>
+  <data name="TwoFactorAuthentication" xml:space="preserve">
+    <value>Uwierzytelnianie dwuskładnikowe</value>
+  </data>
+  <data name="UnableToLoadUserWithId" xml:space="preserve">
+    <value>Nie można załadować użytkownika z ID = {0}.</value>
+  </data>
+  <data name="UnexpectedErrorWhenDisabling2FA" xml:space="preserve">
+    <value>Wystąpił nieoczekiwany błąd podczas wyłączania 2FA dla użytkownika o identyfikatorze '{0}'.</value>
+  </data>
   <data name="UpdateOperationName" xml:space="preserve">
     <value>Update</value>
+  </data>
+  <data name="UpdateYourPassword" xml:space="preserve">
+    <value>Zaktualizuj hasło</value>
+  </data>
+  <data name="UserChangedTheirPasswordSuccessfully" xml:space="preserve">
+    <value>Użytkownik zmienił swoje hasło.</value>
+  </data>
+  <data name="UserDisabled2FA" xml:space="preserve">
+    <value>Użytkownik o identyfikatorze '{0}' wyłączył 2fa.</value>
+  </data>
+  <data name="UserLoggedOut" xml:space="preserve">
+    <value>User logged out.</value>
+  </data>
+  <data name="VerificationCode" xml:space="preserve">
+    <value>Kod weryfikacyjny</value>
+  </data>
+  <data name="Verify" xml:space="preserve">
+    <value>Zweryfikuj</value>
+  </data>
+  <data name="YourPasswordHasBeenChanged" xml:space="preserve">
+    <value>Twoje hasło zostało zmienione.</value>
   </data>
 </root>

@@ -1,42 +1,31 @@
 ﻿@page
 @model EnableAuthenticatorModel
 @{
-    ViewData["Title"] = "Konfiguracja aplikacji uwierzytelniającej";
-    ViewData["ActivePage"] = "TwoFactorAuthentication";
+    ViewData["Title"] = Resources.ApplicationTexts.AuthConfiguration;
+    ViewData["ActivePage"] = Resources.ApplicationTexts.TwoFactorAuthentication;
 }
 
 <h4>@ViewData["Title"]</h4>
 <div>
-    <p>Aby użyć aplikacji uwierzytelniającej, wykonaj następujące kroki:</p>
+    <p>@Resources.ApplicationTexts.EnableAuthSteps</p>
     <ol class="list">
         <li>
-            <p>
-                Pobierz aplikację do uwierzytelniania dwuskładnikowego, taką jak Microsoft Authenticator
-                <a href="https://go.microsoft.com/fwlink/?Linkid=825071">Windows Phone</a>,
-                <a href="https://go.microsoft.com/fwlink/?Linkid=825072">Android</a> lub
-                <a href="https://go.microsoft.com/fwlink/?Linkid=825073">iOS</a> albo
-                Google Authenticator dla
-                <a href="https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2&amp;hl=en">Android</a> lub
-                <a href="https://itunes.apple.com/us/app/google-authenticator/id388497605?mt=8">iOS</a>.
-            </p>
+            <p>@Resources.ApplicationTexts.EnableAuthStep1</p>
         </li>
         <li>
-            <p>Wprowadź ten klucz <kbd>@Model.SharedKey</kbd> do Twojej aplikacji do uwierzytelniania dwuskładnikowego. Wielkość liter i spacje nie mają znaczenia.</p>
+            <p>@string.Format(Resources.ApplicationTexts.EnableAuthStep2, Model.SharedKey)</p>
         </li>
         <li>
-            <p>
-                Po wprowadzeniu powyższego klucza, Twoja aplikacja do uwierzytelniania dwuskładnikowego zapewni Ci dostęp
-                z unikalnym kodem. Wprowadź kod w polu potwierdzenia poniżej.
-            </p>
+            <p>@Resources.ApplicationTexts.EnableAuthStep3</p>
             <div class="row">
                 <div class="col-md-6">
                     <form method="post">
                         <div class="form-group">
-                            <label asp-for="Input.Code" class="control-label">Kod weryfikacyjny</label>
+                            <label asp-for="Input.Code" class="control-label">@Resources.ApplicationTexts.VerificationCode</label>
                             <input asp-for="Input.Code" class="form-control" autocomplete="off" />
                             <span asp-validation-for="Input.Code" class="text-danger"></span>
                         </div>
-                        <button type="submit" class="btn btn-default">Zweryfikuj</button>
+                        <button type="submit" class="btn btn-default">@Resources.ApplicationTexts.Verify</button>
                         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                     </form>
                 </div>

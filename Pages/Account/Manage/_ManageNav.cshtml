@@ -4,12 +4,12 @@
 }
 
 <ul class="nav nav-pills nav-stacked">
-    <li class="@ManageNavPages.IndexNavClass(ViewContext)"><a asp-page="./Index">Profil</a></li>
-    <li class="@ManageNavPages.ChangePasswordNavClass(ViewContext)"><a asp-page="./ChangePassword">Zmień hasło</a></li>
+    <li class="@ManageNavPages.IndexNavClass(ViewContext)"><a asp-page="./Index">@Resources.ApplicationTexts.Profile</a></li>
+    <li class="@ManageNavPages.ChangePasswordNavClass(ViewContext)"><a asp-page="./ChangePassword">@Resources.ApplicationTexts.ChangePassword</a></li>
     @if (hasExternalLogins)
     {
-        <li class="@ManageNavPages.ExternalLoginsNavClass(ViewContext)"><a asp-page="./ExternalLogins">Zewnętrzne loginy</a></li>
+        <li class="@ManageNavPages.ExternalLoginsNavClass(ViewContext)"><a asp-page="./ExternalLogins">@Resources.ApplicationTexts.ExtrernalLogins</a></li>
     }
-    <li class="@ManageNavPages.TwoFactorAuthenticationNavClass(ViewContext)"><a asp-page="./TwoFactorAuthentication">Uwierzytelnianie dwuskładnikowe</a></li>
+    <li class="@ManageNavPages.TwoFactorAuthenticationNavClass(ViewContext)"><a asp-page="./TwoFactorAuthentication">@Resources.ApplicationTexts.TwoFactorAuthentication</a></li>
 </ul>
 
