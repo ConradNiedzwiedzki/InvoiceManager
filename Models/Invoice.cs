@@ -24,7 +24,7 @@ namespace InvoiceManager.Models
 
         [Required(ErrorMessage = "Wpisz kwotę (np. 12.34)")]
         [Range(0, double.MaxValue, ErrorMessage = "Wartość pola musi mieć format np. 12.34 (nie 12,34)")]
-        [RegularExpression("\\d{9}", ErrorMessage = "Wartość pola musi mieć format np. 12.34 (nie 12,34)")]
+        [RegularExpression("^[0-9]+(\\.[0-9]{1,2})?$", ErrorMessage = "Popraw format kwoty - kwota z kropką i maksymalnie dwa miejsca po kropce np. 123.45")]
         [DataType(DataType.Currency)]
         [Display(Name = "Kwota")]
         public double Amount { get; set; }
