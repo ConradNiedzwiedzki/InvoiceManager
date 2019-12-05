@@ -2,13 +2,13 @@
 @model InvoiceManager.Pages.Invoices.DetailsModel
 
 @{
-    ViewData["Title"] = "Szczegóły faktury";
+    ViewData["Title"] = Resources.ApplicationTexts.DetailsTitle;
 }
 
-<h2>Szczegóły faktury</h2>
+<h2>@Resources.ApplicationTexts.DetailsTitle</h2>
 
 <div>
-    <h4>Faktura</h4>
+    <h4>@Resources.ApplicationTexts.Invoice</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -71,7 +71,7 @@
         <form style="display:inline;" method="post">
             <input type="hidden" name="id" value="@Model.Invoice.InvoiceId" />
             <input type="hidden" name="status" value="@InvoiceStatus.Approved" />
-            <button type="submit" class="btn btn-xs btn-success">Oznacz, jako "wystawione"</button>
+            <button type="submit" class="btn btn-xs btn-success">@Resources.ApplicationTexts.MarkAsIssuedButton</button>
         </form>
     }
 }
@@ -79,8 +79,8 @@
 <div>
     @if ((await AuthorizationService.AuthorizeAsync(User, Model.Invoice, InvoiceOperations.Update)).Succeeded)
     {
-        <a asp-page="./Edit" asp-route-id="@Model.Invoice.InvoiceId">Edytuj</a>
+        <a asp-page="./Edit" asp-route-id="@Model.Invoice.InvoiceId">@Resources.ApplicationTexts.Edit</a>
         <text> | </text>
     }
-    <a asp-page="./Index">Wróć do listy</a>
+    <a asp-page="./Index">@Resources.ApplicationTexts.BackToList</a>
 </div>

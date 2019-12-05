@@ -25,8 +25,7 @@ namespace InvoiceManager.Pages.Invoices
 
         public async Task OnGetAsync(DateTime date)
         {
-            var allInvoices = from i in Context.Invoice
-                select i;
+            var allInvoices = from invoice in Context.Invoice select invoice;
 
             IQueryable<Invoice> filteredInvoices = null;
 
@@ -43,19 +42,17 @@ namespace InvoiceManager.Pages.Invoices
             {
                 if (string.IsNullOrEmpty(invoice.AccountantId))
                 {
-                    invoice.AccountantId =
-                        "<Nie dodałeś jeszcze ID księgowego do swojego profilu Dodaj ID księgowego, aby on również zobaczył fakturę!";
+                    invoice.AccountantId = Resources.ApplicationTexts.NoAccountantIdAdded;
                 }
 
                 if (string.IsNullOrEmpty(invoice.CompanyName))
                 {
-                    invoice.CompanyName =
-                        "<Nie dodałeś jeszcze nazwy swojej firmy do swojego profilu!>";
+                    invoice.CompanyName = Resources.ApplicationTexts.NoCompanyNameAdded;
                 }
             }
 
             FilterDate = date;
-            Invoice = await filteredInvoices.ToListAsync();
+            Invoice = await (filteredInvoices ?? throw new NullReferenceException()).ToListAsync();
         }
     }
 }

@@ -13,12 +13,12 @@ namespace InvoiceManager.Pages.Invoices
 {
     public class CreateModel : DiBasePageModel
     {
-        private readonly UserManager<ApplicationUser> _userManager;
+        private readonly UserManager<ApplicationUser> userManager;
 
         public CreateModel(ApplicationDbContext context, IAuthorizationService authorizationService, UserManager<ApplicationUser> userManager)
             : base(context, authorizationService, userManager)
         {
-            _userManager = userManager;
+            this.userManager = userManager;
         }
 
         public IActionResult OnGet()
@@ -41,10 +41,10 @@ namespace InvoiceManager.Pages.Invoices
                 return Page();
             }
 
-            var user = await _userManager.GetUserAsync(User);
+            var user = await userManager.GetUserAsync(User);
             if (user == null)
             {
-                throw new ApplicationException($"Unable to load user with ID '{_userManager.GetUserId(User)}'.");
+                throw new ApplicationException(string.Format(Resources.ApplicationTexts.UnableToLoadUserWithId, userManager.GetUserId(User)));
             }
 
             Invoice.OwnerId = UserManager.GetUserId(User);

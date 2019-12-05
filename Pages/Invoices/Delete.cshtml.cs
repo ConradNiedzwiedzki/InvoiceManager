@@ -40,11 +40,11 @@ namespace InvoiceManager.Pages.Invoices
             return Page();
         }
 
-        public async Task<IActionResult> OnPostAsync(int id)
+        public async Task<IActionResult> OnPostAsync(int invoiceId)
         {
-            Invoice = await Context.Invoice.FindAsync(id);
+            Invoice = await Context.Invoice.FindAsync(invoiceId);
 
-            var invoice = await Context.Invoice.AsNoTracking().FirstOrDefaultAsync(i => i.InvoiceId == id);
+            var invoice = await Context.Invoice.AsNoTracking().FirstOrDefaultAsync(i => i.InvoiceId == invoiceId);
 
             if (invoice == null)
             {

@@ -31,14 +31,12 @@ namespace InvoiceManager.Pages.Invoices
 
             if (string.IsNullOrEmpty(Invoice.AccountantId))
             {
-                Invoice.AccountantId =
-                    "<Nie dodałeś jeszcze ID księgowego do swojego profilu Dodaj ID księgowego, aby on również zobaczył fakturę!>";
+                Invoice.AccountantId = Resources.ApplicationTexts.NoAccountantIdAdded;
             }
 
             if (string.IsNullOrEmpty(Invoice.AccountantId))
             {
-                Invoice.AccountantId =
-                    "<Nie dodałeś jeszcze nazwy swojej firmy do swojego profilu!>";
+                Invoice.AccountantId = Resources.ApplicationTexts.NoCompanyNameAdded;
             }
 
             var isAuthorized = User.IsInRole(Resources.ApplicationTexts.InvoiceAccountantRole) || User.IsInRole(Resources.ApplicationTexts.InvoiceAdministratorsRole);

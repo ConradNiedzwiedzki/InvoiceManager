@@ -2,7 +2,7 @@
 @model InvoiceManager.Pages.Invoices.IndexModel
 
 @{
-    ViewData["Title"] = "Lista faktur";
+    ViewData["Title"] = Resources.ApplicationTexts.InvoicesIndexTitle;
 }
 
 <h2>Lista faktur</h2>
@@ -10,7 +10,7 @@
 <form asp-controller="Invoice" asp-action="Filter" method="get" class="filterform">
     <p>
         <input type="date" name="date">
-        <input type="submit" value="Filtruj listę po dacie wystawienia" />
+        <input type="submit" value=@Resources.ApplicationTexts.FilterSubmit />
     </p>
 </form>
 <table class="table">
@@ -71,18 +71,18 @@
                     User, item,
                     InvoiceOperations.Update)).Succeeded)
                 {
-                    <a asp-page="./Edit" asp-route-id="@item.InvoiceId">Edytuj</a>
+                    <a asp-page="./Edit" asp-route-id="@item.InvoiceId">@Resources.ApplicationTexts.Edit</a>
                     <text> | </text>
                 }
 
-                <a asp-page="./Details" asp-route-id="@item.InvoiceId">Szczegóły</a>
+            <a asp-page="./Details" asp-route-id="@item.InvoiceId">@Resources.ApplicationTexts.Details</a>
 
                 @if ((await AuthorizationService.AuthorizeAsync(
                     User, item,
                     InvoiceOperations.Delete)).Succeeded)
                 {
                     <text> | </text>
-                    <a asp-page="./Delete" asp-route-id="@item.InvoiceId">Usuń</a>
+                    <a asp-page="./Delete" asp-route-id="@item.InvoiceId">@Resources.ApplicationTexts.Delete</a>
                 }
             </td>
         </tr>
@@ -91,5 +91,5 @@
 </table>
 
 <p>
-    <a asp-page="Create"><button class="btn btn-primary">Dodaj nową fakturę</button></a>
+    <a asp-page="Create"><button class="btn btn-primary">@Resources.ApplicationTexts.CreateInvoiceButton</button></a>
 </p>

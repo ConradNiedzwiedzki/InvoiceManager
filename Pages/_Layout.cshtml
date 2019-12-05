@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@using Resources
+<!DOCTYPE html>
 <html lang="pl-PL">
 <head>
     <meta charset="utf-8">
@@ -21,18 +22,18 @@
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Przełącz nawigację</span>
+                    <span class="sr-only">@Resources.ApplicationTexts.SwitchNavigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a asp-page="/Invoices/Index" class="navbar-brand">Organizer faktur</a>
+                <a asp-page="/Invoices/Index" class="navbar-brand">@Resources.ApplicationTexts.ApplicationName</a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a asp-page="/Invoices/Index">Faktury</a></li>
-                    <li><a asp-page="/About">O aplikacji</a></li>
-                    <li><a asp-page="/Contact">Kontakt</a></li>
+                    <li><a asp-page="/Invoices/Index">@Resources.ApplicationTexts.InvoicesIndexTitle</a></li>
+                    <li><a asp-page="/About">@Resources.ApplicationTexts.AboutTitle</a></li>
+                    <li><a asp-page="/Contact">@Resources.ApplicationTexts.ContactTitle</a></li>
                 </ul>
                 @await Html.PartialAsync($"_LoginPartial")
             </div>
@@ -42,7 +43,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; 2019 - Konrad Niedźwiedzki</p>
+            <p>@Resources.ApplicationTexts.Copyright</p>
         </footer>
     </div>
 

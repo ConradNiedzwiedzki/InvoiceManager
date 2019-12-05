@@ -1,23 +1,15 @@
 @page
 @model ErrorModel
 @{
-    ViewData["Title"] = "Błąd";
+    ViewData["Title"] = Resources.ApplicationTexts.ErrorPageTitle;
 }
 
-<h1 class="text-danger">Błąd.</h1>
-<h2 class="text-danger">Podczas przetwarzania żądania wystąpił błąd.</h2>
+    <h1 class="text-danger">@Resources.ApplicationTexts.ErrorPageHeader</h1>
+<h2 class="text-danger">@Resources.ApplicationTexts.ErrorWhenProcessingRequest</h2>
 
 @if (Model.ShowRequestId)
 {
     <p>
-        <strong>ID żądania:</strong> <code>@Model.RequestId</code>
+        @string.Format(Resources.ApplicationTexts.RequestId, Model.RequestId)
     </p>
 }
-
-<h3>Tryb deweloperski</h3>
-<p>
-    Przejście do środowiska <strong>deweloperskiego</strong> wyświetli bardziej szczegółowe informacje na temat błędu, który wystąpił.
-</p>
-<p>
-    <strong>Środowisko programistyczne nie powinno być włączone we wdrożonych aplikacjach</strong>!
-</p>

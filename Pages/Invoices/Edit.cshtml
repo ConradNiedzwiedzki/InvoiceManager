@@ -2,10 +2,10 @@
 @model InvoiceManager.Pages.Invoices.EditModel
 
 @{
-    ViewData["Title"] = "Edycja faktury";
+    ViewData["Title"] = Resources.ApplicationTexts.EditTitle;
 }
 
-    <h2>Edycja faktury</h2>
+    <h2>@Resources.ApplicationTexts.EditTitle</h2>
 
 <h4>Faktura</h4>
 <hr />
@@ -35,14 +35,14 @@
                 <span asp-validation-for="Invoice.DueDate" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Zapisz zmiany" class="btn btn-default" />
+                <input type="submit" value=@Resources.ApplicationTexts.SaveChanges class="btn btn-default" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-page="./Index">Wróć do listy</a>
+    <a asp-page="./Index">@Resources.ApplicationTexts.BackToList</a>
 </div>
 
 @section Scripts {

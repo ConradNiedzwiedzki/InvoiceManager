@@ -76,7 +76,7 @@ namespace InvoiceManager.Pages.Account
 
             if (result.Succeeded)
             {
-                logger.LogInformation("User created a new account with password.");
+                logger.LogInformation(Resources.ApplicationTexts.UserCreatedNewAccountWithPassword);
 
                 var code = await userManager.GenerateEmailConfirmationTokenAsync(user);
                 var callbackUrl = Url.EmailConfirmationLink(user.Id, code, Request.Scheme);

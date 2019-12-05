@@ -2,12 +2,12 @@
 @model InvoiceManager.Pages.Invoices.CreateModel
 
 @{
-    ViewData["Title"] = "Dodaj fakturę";
+    ViewData["Title"] = Resources.ApplicationTexts.CreateTitle;
 }
 
-<h2>Dodawanie faktury</h2>
+<h2>@Resources.ApplicationTexts.CreateHeader</h2>
 
-<h4>Faktura</h4>
+<h4>@Resources.ApplicationTexts.Invoice</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -41,7 +41,7 @@
 </div>
 
 <div>
-    <a asp-page="Index">Wróć do listy</a>
+    <a asp-page="Index">@Resources.ApplicationTexts.BackToList</a>
 </div>
 
 @section Scripts {

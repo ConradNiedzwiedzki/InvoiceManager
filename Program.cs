@@ -25,11 +25,11 @@ namespace InvoiceManager
                 context.Database.Migrate();
 
                 var config = host.Services.GetRequiredService<IConfiguration>();
-                var testUserPw = config[Resources.ApplicationTexts.SeedUserPW];
+                var testUserPassword = config[Resources.ApplicationTexts.SeedUserPW];
 
                 try
                 {
-                    SeedData.Initialize(services, testUserPw).Wait();
+                    SeedData.Initialize(services, testUserPassword).Wait();
                 }
                 catch (Exception exception)
                 {

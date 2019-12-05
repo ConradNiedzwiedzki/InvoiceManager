@@ -22,8 +22,7 @@ namespace InvoiceManager.Pages.Invoices
 
         public async Task OnGetAsync()
         {
-            var invoices = from i in Context.Invoice
-                            select i;
+            var invoices = from invoice in Context.Invoice select invoice;
 
             var isAuthorized = User.IsInRole(Resources.ApplicationTexts.InvoiceAdministratorsRole);
 
@@ -38,14 +37,12 @@ namespace InvoiceManager.Pages.Invoices
             {
                 if (string.IsNullOrEmpty(invoice.AccountantId))
                 {
-                    invoice.AccountantId =
-                        "<Nie dodałeś jeszcze ID księgowego do swojego profilu Dodaj ID księgowego, aby on również zobaczył fakturę!";
+                    invoice.AccountantId = Resources.ApplicationTexts.NoAccountantIdAdded;
                 }
 
                 if (string.IsNullOrEmpty(invoice.CompanyName))
                 {
-                    invoice.CompanyName =
-                        "<Nie dodałeś jeszcze nazwy swojej firmy do swojego profilu!>";
+                    invoice.CompanyName = Resources.ApplicationTexts.NoCompanyNameAdded;
                 }
             }
 

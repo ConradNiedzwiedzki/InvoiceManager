@@ -124,6 +124,12 @@
   <data name="About2FADisablingTitle" xml:space="preserve">
     <value>Ta akcja służy tylko do wyłączenia 2FA.</value>
   </data>
+  <data name="AboutText" xml:space="preserve">
+    <value>Ta aplikacja została stworzona w celu ułatwienia życia księgowych i przedsiębiorców, których przytłacza ilość wystawianych faktur. Mamy nadzieję, że z nami prowadzenie własnej działalności stanie się dużo przyjemniejsze!</value>
+  </data>
+  <data name="AboutTitle" xml:space="preserve">
+    <value>O aplikacji</value>
+  </data>
   <data name="AccountantID" xml:space="preserve">
     <value>ID księgowego</value>
   </data>
@@ -136,6 +142,9 @@
   <data name="AdminEmail" xml:space="preserve">
     <value>admin@niedzwiedzki.net</value>
   </data>
+  <data name="ApplicationName" xml:space="preserve">
+    <value>Organizer faktur</value>
+  </data>
   <data name="ApproveOperationName" xml:space="preserve">
     <value>Approve</value>
   </data>
@@ -144,6 +153,9 @@
   </data>
   <data name="AuthenticatorUriFormat" xml:space="preserve">
     <value>otpauth://totp/{0}:{1}?secret={2}&amp;issuer={0}&amp;digits=6</value>
+  </data>
+  <data name="BackToList" xml:space="preserve">
+    <value>Wróć do listy</value>
   </data>
   <data name="CannotDisable2FA" xml:space="preserve">
     <value>Nie można wyłączyć 2FA dla użytkownika o identyfikatorze '{0}', ponieważ nie jest obecnie włączony.</value>
@@ -154,23 +166,71 @@
   <data name="ChangeYourAccountSettings" xml:space="preserve">
     <value>Zmień ustawienia swojego konta</value>
   </data>
+  <data name="CodeMustBeSuppliedForPasswordResetException" xml:space="preserve">
+    <value>Aby zresetować hasło, należy podać kod.</value>
+  </data>
   <data name="ConfirmEmailAdress" xml:space="preserve">
     <value>Potwierdź adres e-mail</value>
   </data>
   <data name="ConfirmEmailAdressByClickingHere" xml:space="preserve">
     <value>Potwierdź proszę swój adres e-mail &lt;a href='{0}'&gt;klikając tutaj&lt;/a&gt;.</value>
   </data>
+  <data name="ContactAdressText" xml:space="preserve">
+    <value>Konrad Niedźwiedzki&lt;br /&gt;Możesz znaleźć mnie na: &lt;a href="https://www.linkedin.com/in/konrad-niedzwiedzki/"&gt;LinkedIn&lt;/a&gt;&lt;br /&gt;Mam też swoją stronę internetową: &lt;a href="http://niedzwiedzki.net/"&gt;niedzwiedzki.net&lt;/a&gt;&lt;br /&gt;</value>
+  </data>
+  <data name="ContactTitle" xml:space="preserve">
+    <value>Kontakt</value>
+  </data>
+  <data name="Copyright" xml:space="preserve">
+    <value>&amp;copy; 2019 - Konrad Niedźwiedzki</value>
+  </data>
+  <data name="CreateHeader" xml:space="preserve">
+    <value>Dodawanie faktury</value>
+  </data>
+  <data name="CreateInvoiceButton" xml:space="preserve">
+    <value>Dodaj nową fakturę</value>
+  </data>
+  <data name="CreateNewAccount" xml:space="preserve">
+    <value>Stwórz nowe konto.</value>
+  </data>
   <data name="CreateOperationName" xml:space="preserve">
     <value>Create</value>
   </data>
+  <data name="CreateTitle" xml:space="preserve">
+    <value>Dodaj fakturę</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Usuń</value>
+  </data>
+  <data name="DeleteHeader" xml:space="preserve">
+    <value>Usuwanie faktury</value>
+  </data>
   <data name="DeleteOperationName" xml:space="preserve">
     <value>Delete</value>
+  </data>
+  <data name="DeleteText" xml:space="preserve">
+    <value>Jesteś pewien, że chcesz usunąć tę fakturę?</value>
+  </data>
+  <data name="DeleteTitle" xml:space="preserve">
+    <value>Usuń fakturę</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>Szczegóły</value>
+  </data>
+  <data name="DetailsTitle" xml:space="preserve">
+    <value>Szczegóły faktury</value>
   </data>
   <data name="Disable2FA" xml:space="preserve">
     <value>Wyłącz uwierzytelnienie dwuskładnikowe (2FA)</value>
   </data>
   <data name="Disable2FAButton" xml:space="preserve">
     <value>Wyłącz 2FA</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Edytuj</value>
+  </data>
+  <data name="EditTitle" xml:space="preserve">
+    <value>Edycja faktury</value>
   </data>
   <data name="EnableAuthStep1" xml:space="preserve">
     <value>Pobierz aplikację do uwierzytelniania dwuskładnikowego, taką jak Microsoft Authenticator &lt;a href="https://go.microsoft.com/fwlink/?Linkid=825071"&gt;Windows Phone&lt;/a&gt;, &lt;a href="https://go.microsoft.com/fwlink/?Linkid=825072"&gt;Android&lt;/a&gt; lub &lt;a href="https://go.microsoft.com/fwlink/?Linkid=825073"&gt;iOS&lt;/a&gt; albo Google Authenticator dla &lt;a href="https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2&amp;amp;hl=en"&gt;Android&lt;/a&gt; lub &lt;a href="https://itunes.apple.com/us/app/google-authenticator/id388497605?mt=8"&gt;iOS&lt;/a&gt;.</value>
@@ -183,6 +243,15 @@
   </data>
   <data name="EnableAuthSteps" xml:space="preserve">
     <value>Aby użyć aplikacji uwierzytelniającej, wykonaj następujące kroki:</value>
+  </data>
+  <data name="ErrorPageHeader" xml:space="preserve">
+    <value>Błąd</value>
+  </data>
+  <data name="ErrorPageTitle" xml:space="preserve">
+    <value>Błąd</value>
+  </data>
+  <data name="ErrorWhenProcessingRequest" xml:space="preserve">
+    <value>Podczas przetwarzania żądania wystąpił błąd.</value>
   </data>
   <data name="ErrorWhileSeedingTheDatabase" xml:space="preserve">
     <value>An error occurred while seeding the database.</value>
@@ -199,6 +268,12 @@
   <data name="ExtrernalLogins" xml:space="preserve">
     <value>Zewnętrzne loginy</value>
   </data>
+  <data name="FilteredTitle" xml:space="preserve">
+    <value>Przefiltrowana lista faktur</value>
+  </data>
+  <data name="FilterSubmit" xml:space="preserve">
+    <value>Filtruj listę po dacie wystawienia</value>
+  </data>
   <data name="GenerateCodesButton" xml:space="preserve">
     <value>Generuj kody odzyskiwania</value>
   </data>
@@ -211,20 +286,47 @@
   <data name="InsertNameOfCompanyErrorMessage" xml:space="preserve">
     <value>Wpisz nazwę firmy do faktury</value>
   </data>
+  <data name="Invoice" xml:space="preserve">
+    <value>Faktura</value>
+  </data>
   <data name="InvoiceAccountantRole" xml:space="preserve">
     <value>InvoiceAccountants</value>
   </data>
   <data name="InvoiceAdministratorsRole" xml:space="preserve">
     <value>InvoiceAdministrators</value>
   </data>
+  <data name="InvoicesIndexTitle" xml:space="preserve">
+    <value>Faktury</value>
+  </data>
+  <data name="LogIn" xml:space="preserve">
+    <value>Logowanie</value>
+  </data>
   <data name="LoginWithAccount" xml:space="preserve">
     <value>Zaloguj używając konta {0}</value>
+  </data>
+  <data name="LogOut" xml:space="preserve">
+    <value>Wyloguj</value>
+  </data>
+  <data name="MainPageText" xml:space="preserve">
+    <value>Witamy w naszym InvoiceManager! :) Tu będzie kiedyś super zajebista strona tytułowa. :D</value>
+  </data>
+  <data name="MainPageTitle" xml:space="preserve">
+    <value>Strona główna</value>
   </data>
   <data name="ManagerEmail" xml:space="preserve">
     <value>manager@niedzwiedzki.net</value>
   </data>
+  <data name="MarkAsIssuedButton" xml:space="preserve">
+    <value>Oznacz, jako 'wystawione'</value>
+  </data>
   <data name="NameOfCompany" xml:space="preserve">
     <value>Nazwa firmy do faktury</value>
+  </data>
+  <data name="NoAccountantIdAdded" xml:space="preserve">
+    <value>&lt;Nie dodałeś jeszcze ID księgowego do swojego profilu Dodaj ID księgowego, aby on również zobaczył fakturę!&gt;</value>
+  </data>
+  <data name="NoCompanyNameAdded" xml:space="preserve">
+    <value>&lt;Nie dodałeś jeszcze nazwy swojej firmy do swojego profilu!&gt;</value>
   </data>
   <data name="PasswordChange" xml:space="preserve">
     <value>Zmiana hasła</value>
@@ -238,8 +340,17 @@
   <data name="ReadOperationName" xml:space="preserve">
     <value>Read</value>
   </data>
+  <data name="Register" xml:space="preserve">
+    <value>Rejestracja</value>
+  </data>
+  <data name="RegisterButton" xml:space="preserve">
+    <value>Zarejestruj</value>
+  </data>
   <data name="RegisteredLogins" xml:space="preserve">
     <value>ZarejestrowaneLoginy</value>
+  </data>
+  <data name="RegisterTitle" xml:space="preserve">
+    <value>Rejestracja</value>
   </data>
   <data name="RejectOperationName" xml:space="preserve">
     <value>Reject</value>
@@ -250,11 +361,44 @@
   <data name="RemoveLoginFromYourAccount" xml:space="preserve">
     <value>Usuń {0} login ze swojego konta</value>
   </data>
+  <data name="RequestId" xml:space="preserve">
+    <value>&lt;strong&gt;ID żądania:&lt;/strong&gt; &lt;code&gt;{0}&lt;/code&gt;</value>
+  </data>
+  <data name="ResetButton" xml:space="preserve">
+    <value>Resetuj</value>
+  </data>
+  <data name="ResetPasswordConfirmationText" xml:space="preserve">
+    <value>Twoje hasło zostało zresetowane. Proszę &lt;a asp-page="./Login"&gt;kliknąć tutaj&lt;/a&gt;, aby się zalogować.</value>
+  </data>
+  <data name="ResetPasswordConfirmationTitle" xml:space="preserve">
+    <value>Potwierdzenie zresetowania hasła</value>
+  </data>
+  <data name="ResetPasswordText" xml:space="preserve">
+    <value>Zresetuj swoje hasło.</value>
+  </data>
+  <data name="ResetPasswordTitle" xml:space="preserve">
+    <value>Resetowanie hasła</value>
+  </data>
   <data name="ResetYourPasswordByClickingHere" xml:space="preserve">
     <value>Zresetuj swoje hasło &lt;a href='{0}'&gt;klikając tutaj&lt;/a&gt;.</value>
   </data>
+  <data name="ReturnToViewAllButton" xml:space="preserve">
+    <value>Wyczyść filtrowanie i wróć do listy wszystkich faktur</value>
+  </data>
+  <data name="SaveChanges" xml:space="preserve">
+    <value>Zapisz zmiany</value>
+  </data>
   <data name="SeedUserPW" xml:space="preserve">
     <value>SeedUserPW</value>
+  </data>
+  <data name="SignedOutSuccessfulText" xml:space="preserve">
+    <value>Twoje wylogowanie przebiegło pomyślnie.</value>
+  </data>
+  <data name="SignedOutTitle" xml:space="preserve">
+    <value>Wylogowano</value>
+  </data>
+  <data name="SwitchNavigation" xml:space="preserve">
+    <value>Przełącz nawigację</value>
   </data>
   <data name="TwoFactorAuthentication" xml:space="preserve">
     <value>Uwierzytelnianie dwuskładnikowe</value>
@@ -283,6 +427,9 @@
   <data name="UserChangedTheirPasswordSuccessfully" xml:space="preserve">
     <value>Użytkownik zmienił swoje hasło.</value>
   </data>
+  <data name="UserCreatedNewAccountWithPassword" xml:space="preserve">
+    <value>Użytkownik utworzył nowe konto z hasłem.</value>
+  </data>
   <data name="UserDisabled2FA" xml:space="preserve">
     <value>Użytkownik o identyfikatorze '{0}' wyłączył 2fa.</value>
   </data>
@@ -300,6 +447,12 @@
   </data>
   <data name="Verify" xml:space="preserve">
     <value>Zweryfikuj</value>
+  </data>
+  <data name="WelcomePageText" xml:space="preserve">
+    <value>Witamy w naszym InvoiceManager! :) Tu będzie kiedyś super zajebista strona tytułowa. :D</value>
+  </data>
+  <data name="WelcomeUserText" xml:space="preserve">
+    <value>Witaj, {0}!</value>
   </data>
   <data name="YourPasswordHasBeenChanged" xml:space="preserve">
     <value>Twoje hasło zostało zmienione.</value>

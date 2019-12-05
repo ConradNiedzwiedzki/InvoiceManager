@@ -34,7 +34,7 @@ namespace InvoiceManager.Pages.Account
             public string Password { get; set; }
 
             [DataType(DataType.Password)]
-            [Display(Name = "Confirm password")]
+            [Display(Name = "Potwierdü swoje has≥o")]
             [Compare("Password", ErrorMessage = "Nowe has≥o i potwierdzenie nowego has≥a nie pasujπ do siebie.")]
             public string ConfirmPassword { get; set; }
 
@@ -45,7 +45,7 @@ namespace InvoiceManager.Pages.Account
         {
             if (code == null)
             {
-                throw new ApplicationException("A code must be supplied for password reset.");
+                throw new ApplicationException(@Resources.ApplicationTexts.CodeMustBeSuppliedForPasswordResetException);
             }
             else
             {

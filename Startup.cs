@@ -16,10 +16,10 @@ namespace InvoiceManager
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration, IHostingEnvironment env)
+        public Startup(IConfiguration configuration, IHostingEnvironment environment)
         {
             Configuration = configuration;
-            Environment = env;
+            Environment = environment;
         }
 
         public IConfiguration Configuration { get; }

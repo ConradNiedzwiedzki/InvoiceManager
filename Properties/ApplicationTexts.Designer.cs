@@ -80,6 +80,24 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Ta aplikacja została stworzona w celu ułatwienia życia księgowych i przedsiębiorców, których przytłacza ilość wystawianych faktur. Mamy nadzieję, że z nami prowadzenie własnej działalności stanie się dużo przyjemniejsze!.
+        /// </summary>
+        public static string AboutText {
+            get {
+                return ResourceManager.GetString("AboutText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to O aplikacji.
+        /// </summary>
+        public static string AboutTitle {
+            get {
+                return ResourceManager.GetString("AboutTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to ID księgowego.
         /// </summary>
         public static string AccountantID {
@@ -116,6 +134,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Organizer faktur.
+        /// </summary>
+        public static string ApplicationName {
+            get {
+                return ResourceManager.GetString("ApplicationName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Approve.
         /// </summary>
         public static string ApproveOperationName {
@@ -139,6 +166,15 @@ namespace Resources {
         public static string AuthenticatorUriFormat {
             get {
                 return ResourceManager.GetString("AuthenticatorUriFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Wróć do listy.
+        /// </summary>
+        public static string BackToList {
+            get {
+                return ResourceManager.GetString("BackToList", resourceCulture);
             }
         }
         
@@ -170,6 +206,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Aby zresetować hasło, należy podać kod..
+        /// </summary>
+        public static string CodeMustBeSuppliedForPasswordResetException {
+            get {
+                return ResourceManager.GetString("CodeMustBeSuppliedForPasswordResetException", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Potwierdź adres e-mail.
         /// </summary>
         public static string ConfirmEmailAdress {
@@ -188,6 +233,60 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Konrad Niedźwiedzki&lt;br /&gt;Możesz znaleźć mnie na: &lt;a href=&quot;https://www.linkedin.com/in/konrad-niedzwiedzki/&quot;&gt;LinkedIn&lt;/a&gt;&lt;br /&gt;Mam też swoją stronę internetową: &lt;a href=&quot;http://niedzwiedzki.net/&quot;&gt;niedzwiedzki.net&lt;/a&gt;&lt;br /&gt;.
+        /// </summary>
+        public static string ContactAdressText {
+            get {
+                return ResourceManager.GetString("ContactAdressText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kontakt.
+        /// </summary>
+        public static string ContactTitle {
+            get {
+                return ResourceManager.GetString("ContactTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &amp;copy; 2019 - Konrad Niedźwiedzki.
+        /// </summary>
+        public static string Copyright {
+            get {
+                return ResourceManager.GetString("Copyright", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dodawanie faktury.
+        /// </summary>
+        public static string CreateHeader {
+            get {
+                return ResourceManager.GetString("CreateHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dodaj nową fakturę.
+        /// </summary>
+        public static string CreateInvoiceButton {
+            get {
+                return ResourceManager.GetString("CreateInvoiceButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Stwórz nowe konto..
+        /// </summary>
+        public static string CreateNewAccount {
+            get {
+                return ResourceManager.GetString("CreateNewAccount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Create.
         /// </summary>
         public static string CreateOperationName {
@@ -197,11 +296,74 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Dodaj fakturę.
+        /// </summary>
+        public static string CreateTitle {
+            get {
+                return ResourceManager.GetString("CreateTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Usuń.
+        /// </summary>
+        public static string Delete {
+            get {
+                return ResourceManager.GetString("Delete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Usuwanie faktury.
+        /// </summary>
+        public static string DeleteHeader {
+            get {
+                return ResourceManager.GetString("DeleteHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Delete.
         /// </summary>
         public static string DeleteOperationName {
             get {
                 return ResourceManager.GetString("DeleteOperationName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Jesteś pewien, że chcesz usunąć tę fakturę?.
+        /// </summary>
+        public static string DeleteText {
+            get {
+                return ResourceManager.GetString("DeleteText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Usuń fakturę.
+        /// </summary>
+        public static string DeleteTitle {
+            get {
+                return ResourceManager.GetString("DeleteTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Szczegóły.
+        /// </summary>
+        public static string Details {
+            get {
+                return ResourceManager.GetString("Details", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Szczegóły faktury.
+        /// </summary>
+        public static string DetailsTitle {
+            get {
+                return ResourceManager.GetString("DetailsTitle", resourceCulture);
             }
         }
         
@@ -220,6 +382,24 @@ namespace Resources {
         public static string Disable2FAButton {
             get {
                 return ResourceManager.GetString("Disable2FAButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edytuj.
+        /// </summary>
+        public static string Edit {
+            get {
+                return ResourceManager.GetString("Edit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edycja faktury.
+        /// </summary>
+        public static string EditTitle {
+            get {
+                return ResourceManager.GetString("EditTitle", resourceCulture);
             }
         }
         
@@ -256,6 +436,33 @@ namespace Resources {
         public static string EnableAuthSteps {
             get {
                 return ResourceManager.GetString("EnableAuthSteps", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Błąd.
+        /// </summary>
+        public static string ErrorPageHeader {
+            get {
+                return ResourceManager.GetString("ErrorPageHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Błąd.
+        /// </summary>
+        public static string ErrorPageTitle {
+            get {
+                return ResourceManager.GetString("ErrorPageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Podczas przetwarzania żądania wystąpił błąd..
+        /// </summary>
+        public static string ErrorWhenProcessingRequest {
+            get {
+                return ResourceManager.GetString("ErrorWhenProcessingRequest", resourceCulture);
             }
         }
         
@@ -305,6 +512,24 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Przefiltrowana lista faktur.
+        /// </summary>
+        public static string FilteredTitle {
+            get {
+                return ResourceManager.GetString("FilteredTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Filtruj listę po dacie wystawienia.
+        /// </summary>
+        public static string FilterSubmit {
+            get {
+                return ResourceManager.GetString("FilterSubmit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Generuj kody odzyskiwania.
         /// </summary>
         public static string GenerateCodesButton {
@@ -341,6 +566,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Faktura.
+        /// </summary>
+        public static string Invoice {
+            get {
+                return ResourceManager.GetString("Invoice", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to InvoiceAccountants.
         /// </summary>
         public static string InvoiceAccountantRole {
@@ -359,11 +593,56 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Faktury.
+        /// </summary>
+        public static string InvoicesIndexTitle {
+            get {
+                return ResourceManager.GetString("InvoicesIndexTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Logowanie.
+        /// </summary>
+        public static string LogIn {
+            get {
+                return ResourceManager.GetString("LogIn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Zaloguj używając konta {0}.
         /// </summary>
         public static string LoginWithAccount {
             get {
                 return ResourceManager.GetString("LoginWithAccount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Wyloguj.
+        /// </summary>
+        public static string LogOut {
+            get {
+                return ResourceManager.GetString("LogOut", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Witamy w naszym InvoiceManager! :) Tu będzie kiedyś super zajebista strona tytułowa. :D.
+        /// </summary>
+        public static string MainPageText {
+            get {
+                return ResourceManager.GetString("MainPageText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Strona główna.
+        /// </summary>
+        public static string MainPageTitle {
+            get {
+                return ResourceManager.GetString("MainPageTitle", resourceCulture);
             }
         }
         
@@ -377,11 +656,38 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Oznacz, jako &apos;wystawione&apos;.
+        /// </summary>
+        public static string MarkAsIssuedButton {
+            get {
+                return ResourceManager.GetString("MarkAsIssuedButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Nazwa firmy do faktury.
         /// </summary>
         public static string NameOfCompany {
             get {
                 return ResourceManager.GetString("NameOfCompany", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;Nie dodałeś jeszcze ID księgowego do swojego profilu Dodaj ID księgowego, aby on również zobaczył fakturę!&gt;.
+        /// </summary>
+        public static string NoAccountantIdAdded {
+            get {
+                return ResourceManager.GetString("NoAccountantIdAdded", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;Nie dodałeś jeszcze nazwy swojej firmy do swojego profilu!&gt;.
+        /// </summary>
+        public static string NoCompanyNameAdded {
+            get {
+                return ResourceManager.GetString("NoCompanyNameAdded", resourceCulture);
             }
         }
         
@@ -422,11 +728,38 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Rejestracja.
+        /// </summary>
+        public static string Register {
+            get {
+                return ResourceManager.GetString("Register", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zarejestruj.
+        /// </summary>
+        public static string RegisterButton {
+            get {
+                return ResourceManager.GetString("RegisterButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to ZarejestrowaneLoginy.
         /// </summary>
         public static string RegisteredLogins {
             get {
                 return ResourceManager.GetString("RegisteredLogins", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rejestracja.
+        /// </summary>
+        public static string RegisterTitle {
+            get {
+                return ResourceManager.GetString("RegisterTitle", resourceCulture);
             }
         }
         
@@ -458,6 +791,60 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;strong&gt;ID żądania:&lt;/strong&gt; &lt;code&gt;{0}&lt;/code&gt;.
+        /// </summary>
+        public static string RequestId {
+            get {
+                return ResourceManager.GetString("RequestId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Resetuj.
+        /// </summary>
+        public static string ResetButton {
+            get {
+                return ResourceManager.GetString("ResetButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Twoje hasło zostało zresetowane. Proszę &lt;a asp-page=&quot;./Login&quot;&gt;kliknąć tutaj&lt;/a&gt;, aby się zalogować..
+        /// </summary>
+        public static string ResetPasswordConfirmationText {
+            get {
+                return ResourceManager.GetString("ResetPasswordConfirmationText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Potwierdzenie zresetowania hasła.
+        /// </summary>
+        public static string ResetPasswordConfirmationTitle {
+            get {
+                return ResourceManager.GetString("ResetPasswordConfirmationTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zresetuj swoje hasło..
+        /// </summary>
+        public static string ResetPasswordText {
+            get {
+                return ResourceManager.GetString("ResetPasswordText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Resetowanie hasła.
+        /// </summary>
+        public static string ResetPasswordTitle {
+            get {
+                return ResourceManager.GetString("ResetPasswordTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Zresetuj swoje hasło &lt;a href=&apos;{0}&apos;&gt;klikając tutaj&lt;/a&gt;..
         /// </summary>
         public static string ResetYourPasswordByClickingHere {
@@ -467,11 +854,56 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Wyczyść filtrowanie i wróć do listy wszystkich faktur.
+        /// </summary>
+        public static string ReturnToViewAllButton {
+            get {
+                return ResourceManager.GetString("ReturnToViewAllButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zapisz zmiany.
+        /// </summary>
+        public static string SaveChanges {
+            get {
+                return ResourceManager.GetString("SaveChanges", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to SeedUserPW.
         /// </summary>
         public static string SeedUserPW {
             get {
                 return ResourceManager.GetString("SeedUserPW", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Twoje wylogowanie przebiegło pomyślnie..
+        /// </summary>
+        public static string SignedOutSuccessfulText {
+            get {
+                return ResourceManager.GetString("SignedOutSuccessfulText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Wylogowano.
+        /// </summary>
+        public static string SignedOutTitle {
+            get {
+                return ResourceManager.GetString("SignedOutTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Przełącz nawigację.
+        /// </summary>
+        public static string SwitchNavigation {
+            get {
+                return ResourceManager.GetString("SwitchNavigation", resourceCulture);
             }
         }
         
@@ -557,6 +989,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Użytkownik utworzył nowe konto z hasłem..
+        /// </summary>
+        public static string UserCreatedNewAccountWithPassword {
+            get {
+                return ResourceManager.GetString("UserCreatedNewAccountWithPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Użytkownik o identyfikatorze &apos;{0}&apos; wyłączył 2fa..
         /// </summary>
         public static string UserDisabled2FA {
@@ -607,6 +1048,24 @@ namespace Resources {
         public static string Verify {
             get {
                 return ResourceManager.GetString("Verify", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Witamy w naszym InvoiceManager! :) Tu będzie kiedyś super zajebista strona tytułowa. :D.
+        /// </summary>
+        public static string WelcomePageText {
+            get {
+                return ResourceManager.GetString("WelcomePageText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Witaj, {0}!.
+        /// </summary>
+        public static string WelcomeUserText {
+            get {
+                return ResourceManager.GetString("WelcomeUserText", resourceCulture);
             }
         }
         

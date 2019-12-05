@@ -1,11 +1,11 @@
 @page
 @model IndexModel
 @{
-    ViewData["Title"] = "Strona główna";
+    ViewData["Title"] = Resources.ApplicationTexts.MainPageTitle;
 }
 
 <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="6000">
-    Witamy w naszym InvoiceManager! :) Tu będzie kiedyś super zajebista strona tytułowa. :D
+    @Resources.ApplicationTexts.WelcomePageText
 </div>
 
 <div class="row">

@@ -2,7 +2,7 @@
 @model InvoiceManager.Pages.Invoices.FilteredModel
 
 @{
-    ViewData["Title"] = "Przefiltrowana lista faktur";
+    ViewData["Title"] = Resources.ApplicationTexts.FilteredTitle;
 }
 
 <h2>Wynik filtrowania na dzień @Model.FilterDate.ToShortDateString()</h2>
@@ -65,18 +65,18 @@
                     User, item,
                     InvoiceOperations.Update)).Succeeded)
                 {
-                    <a asp-page="./Edit" asp-route-id="@item.InvoiceId">Edytuj</a>
+                    <a asp-page="./Edit" asp-route-id="@item.InvoiceId">@Resources.ApplicationTexts.Edit</a>
                     <text> | </text>
                 }
 
-                <a asp-page="./Details" asp-route-id="@item.InvoiceId">Szczegóły</a>
+                <a asp-page="./Details" asp-route-id="@item.InvoiceId">@Resources.ApplicationTexts.Details</a>
 
                 @if ((await AuthorizationService.AuthorizeAsync(
                     User, item,
                     InvoiceOperations.Delete)).Succeeded)
                 {
                     <text> | </text>
-                    <a asp-page="./Delete" asp-route-id="@item.InvoiceId">Usuń</a>
+                    <a asp-page="./Delete" asp-route-id="@item.InvoiceId">@Resources.ApplicationTexts.Delete</a>
                 }
             </td>
         </tr>
@@ -84,4 +84,4 @@
     </tbody>
 </table>
 
-<a asp-page="./Index"><button class="btn btn-primary">Wyczyść filtrowanie i wróć do listy wszystkich faktur</button></a>
+<a asp-page="./Index"><button class="btn btn-primary">@Resources.ApplicationTexts.ReturnToViewAllButton</button></a>
